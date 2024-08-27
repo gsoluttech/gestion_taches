@@ -31,7 +31,6 @@ if (isset($_POST['createProject'])) {
 
 
     echo "Accepter !!";
-
 }
 
 if (isset($_POST['deleteP'])) {

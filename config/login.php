@@ -29,9 +29,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 foreach ($results as $result) {
                     if ($password == 'admin') {
                         echo 'changer le mot de passe';
+                        header('Location:  ../../../resources/views/changepassword.php');
+                        exit();
                     } else {
                         if (password_verify($password, $results['MotDePasse'])) {
                             echo 'connectez avec succès';
+
+                            if ($role == '1') {
+                                header('Location:  ../../../resources/views/CordoView.php');
+                                exit();
+                            } else if ($role == '2') {
+                                header('Location:  ../../../resources/views/superviseurs.php');
+                                exit();
+                            } else if ($role == '3') {
+                                header('Location:  ../../../resources/views/task.php');
+                                exit();
+                            } else {
+                                $error = "Une erreur s'est produite";
+                            }
                         } else {
                             echo 'Mot de passe incorrect';
                         }

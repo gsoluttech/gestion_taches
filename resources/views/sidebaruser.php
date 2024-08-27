@@ -8,7 +8,9 @@
         <li><a href="#"><i class='bx bx-cog'></i> Paramètre</a></li>
     </ul>
     <div class="help-center">
-        <i class='bx bx-question-mark'></i>
+        <div class="help-icon">
+            <i class='bx bx-question-mark'></i>
+        </div>
         <p>Help Center</p>
         <span>Having Trouble in Learning. Please contact us for more questions.</span>
         <button>Go To Help Center</button>

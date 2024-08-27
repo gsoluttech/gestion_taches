@@ -90,6 +90,7 @@
 
 
 <?php  
+use config\classes\projet\Project;
 
 if (isset($_POST["createproject"])) {
   $nomProjet = $_POST["nomprojet"];
@@ -99,6 +100,8 @@ if (isset($_POST["createproject"])) {
 
   echo "Valeur aredsjkfhd";
 
+  $class_users = new Project();
 
+  $class_users->AddProject($nomProjet, $dateDebut, $dateFin, $description);
 }
 ?>
