@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/app.css">
-    <title>TAsk</title>
+    <title>Task</title>
 </head>
 <body>
 
@@ -26,41 +26,41 @@
         </div>
     </header>
     <div class="content">
-    <div class="task-container">
-    <div class="task-header">
-        <h2>Nom tâche</h2>
-        <span>Durée</span>
-        <span>Priorité</span>
-        <span>Status</span>
+        <div class="task-container">
+            <div class="task-header">
+                <h2>Nom tâche</h2>
+                <span>Durée</span>
+                <span>Priorité</span>
+                <span>Status</span>
+            </div>
+            <div class="task-item">
+                <span class="task-name">Nom tâche</span>
+                <span class="task-duration">Durée</span>
+                <span class="task-priority">Priorité</span>
+                <span class="task-status in-progress">En cours</span>
+            </div>
+            <div class="task-item">
+                <span class="task-name">Nom tâche</span>
+                <span class="task-duration">Durée</span>
+                <span class="task-priority">Priorité</span>
+                <span class="task-status in-progress">En cours</span>
+            </div>
+                <div class="task-item">
+                    <span class="task-name">Nom tâche</span>
+                    <span class="task-duration">Durée</span>
+                    <span class="task-priority">Priorité</span>
+                    <span class="task-status completed">Terminé</span>
+                </div>
+                    <div class="task-item">
+                        <span class="task-name">Nom tâche</span>
+                        <span class="task-duration">Durée</span>
+                        <span class="task-priority">Priorité</span>
+                        <span class="task-status in-progress">En cours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="task-item">
-        <span class="task-name">Nom tâche</span>
-        <span class="task-duration">Durée</span>
-        <span class="task-priority">Priorité</span>
-        <span class="task-status in-progress">En cours</span>
-    </div>
-    <div class="task-item">
-        <span class="task-name">Nom tâche</span>
-        <span class="task-duration">Durée</span>
-        <span class="task-priority">Priorité</span>
-        <span class="task-status in-progress">En cours</span>
-    </div>
-    <div class="task-item">
-        <span class="task-name">Nom tâche</span>
-        <span class="task-duration">Durée</span>
-        <span class="task-priority">Priorité</span>
-        <span class="task-status completed">Terminé</span>
-    </div>
-    <div class="task-item">
-        <span class="task-name">Nom tâche</span>
-        <span class="task-duration">Durée</span>
-        <span class="task-priority">Priorité</span>
-        <span class="task-status in-progress">En cours</span>
-    </div>
-</div>
-
-    </div>
-</div>
 
 </body>
 </html>

@@ -164,3 +164,43 @@ header {
     background-size: cover;
     background-position: center;
 }
+.task-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 2px solid #e0e0e0;
+    font-weight: bold;
+    color: #333;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.task-name, .task-duration, .task-priority, .task-status {
+    flex: 1;
+    text-align: center;
+    color: #555;
+}
+
+.task-status {
+    font-weight: bold;
+}
+
+.task-status.in-progress {
+    color: #00BFFF; /* Couleur pour "En cours" */
+}
+
+.task-status.completed {
+    color: #32CD32; /* Couleur pour "Terminé" */
+}
+
