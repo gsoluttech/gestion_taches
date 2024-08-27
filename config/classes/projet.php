@@ -1,5 +1,5 @@
 <?php
-namespace config\class\tache;
+namespace config\classes\projet;
 
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'database.php';
 
@@ -21,7 +21,7 @@ function AddProject($nomProjet, $date_Debut, $Date_Fin, $Description, $idProjet)
         echo "Erreur: ";
     } 
 }
-function ModifyProject($idProjet, $nomProjet, $Date_Debut, $Date_Fin, $Description,) {
+function ModifyProject($idProjet, $nomProjet, $Date_Debut, $Date_Fin, $Description) {
     $conn = Database\db_connection();
     $sql = "UPDATE TProjet SET NomProjet = ?, Date_Debut = ?, Date_Fin = ?, Description = ?, IdProjet = ?
             WHERE IdProjet = ?"; 
