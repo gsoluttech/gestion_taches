@@ -44,24 +44,24 @@
                 <td class="py-3 px-6">Priorité</td>
                 <td class="py-3 px-6 text-blue-500">En cours</td>
             </tr>
-            <tr class="border-b">
+            <!-- <tr class="border-b">
                 <td class="py-3 px-6">Nom tâche</td>
                 <td class="py-3 px-6">Durée</td>
                 <td class="py-3 px-6">Priorité</td>
                 <td class="py-3 px-6 text-blue-500">En cours</td>
-            </tr>
+            </tr> -->
             <tr class="border-b">
                 <td class="py-3 px-6">Nom tâche</td>
                 <td class="py-3 px-6">Durée</td>
                 <td class="py-3 px-6">Priorité</td>
                 <td class="py-3 px-6 text-green-500">Terminé</td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td class="py-3 px-6">Nom tâche</td>
                 <td class="py-3 px-6">Durée</td>
                 <td class="py-3 px-6">Priorité</td>
                 <td class="py-3 px-6 text-blue-500">En cours</td>
-            </tr>
+            </tr> -->
         </tbody>
     </table>
 
