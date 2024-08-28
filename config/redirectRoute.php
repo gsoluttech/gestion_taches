@@ -1,16 +1,16 @@
 <?php
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'projet.php';
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'notification.php'; 
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'alluser.php'; 
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'projet.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'notification.php'; 
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'alluser.php'; 
 
 
 // namespace redirect;
 
 
 // use class\projet\Project\createProject;
-use config\class\notification\Notification;
-use config\class\projet\Project;
-use config\class\user\User;
+use config\classes\notification\Notification;
+use config\classes\projet\Project;
+use config\classes\user\User;
 
 
 
