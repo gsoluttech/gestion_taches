@@ -10,7 +10,7 @@
 <body>
 
 <?php require_once 'sidebaruser.php'; ?>
- 
+
 <div class="main-content">
     <header>
         <div class="explorer">Explorer</div>
