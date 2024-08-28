@@ -26,6 +26,44 @@
             <div class="profile-icon"></div>
         </div>
     </header>
+
+    <div id="taskshow" class="content hidden">
+        <div class="task-container">
+            <div class="task-header">
+                <h2>Nom tâche</h2>
+                <span>Durée</span>
+                <span>Priorité</span>
+                <span>Status</span>
+            </div>
+            <div class="task-item">
+                <span class="task-name">Nom tâche</span>
+                <span class="task-duration">Durée</span>
+                <span class="task-priority">Priorité</span>
+                <span class="task-status in-progress">En cours</span>
+            </div>
+            <div class="task-item">
+                <span class="task-name">Nom tâche</span>
+                <span class="task-duration">Durée</span>
+                <span class="task-priority">Priorité</span>
+                <span class="task-status in-progress">En cours</span>
+            </div>
+            <div class="task-item">
+                <span class="task-name">Nom tâche</span>
+                <span class="task-duration">Durée</span>
+                <span class="task-priority">Priorité</span>
+                <span class="task-status completed">Terminé</span>
+            </div>
+            <div class="task-item">
+                <span class="task-name">Nom tâche</span>
+                <span class="task-duration">Durée</span>
+                <span class="task-priority">Priorité</span>
+                <span class="task-status in-progress">En cours</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <table class="w-full text-left border-collapse">
         <thead>
             <tr class="bg-gray-50">
@@ -62,6 +100,5 @@
             </tr> -->
         </tbody>
     </table>
-
 </body>
 </html>
