@@ -30,7 +30,7 @@ function AddProject($nomProjet, $date_Debut, $Date_Fin, $Description) {
         echo "Erreur: ";
     } 
 }
-function ModifyProject($idProjet, $nomProjet, $Date_Debut, $Date_Fin, $Description) {
+function ModifyProject($idProjet, $nomProjet, $Date_Debut, $Date_Fin, $Description,) {
     $conn = Database\db_connection();
     $sql = "UPDATE TProjet SET NomProjet = ?, Date_Debut = ?, Date_Fin = ?, Description = ?, IdProjet = ?
             WHERE IdProjet = ?"; 
