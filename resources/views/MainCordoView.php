@@ -45,16 +45,17 @@
       </div>
       <div>
         <label class="block text-gray-700">Date début</label>
-        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name = "datedebut" />
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name = "dateDebut" />
       </div>
       <div>
         <label class="block text-gray-700">Date fin</label>
-        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="datefin" />
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="dateFin" />
       </div>
-    </form>
-    <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+      <button type="submit" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700" name ="createactivite">
       Créer
     </button>
+    </form>
+
   </div>
 
   <!-- creation de la tache" -->
@@ -71,14 +72,14 @@
       </div>
       <div>
         <label class="block text-gray-700">Date début</label>
-        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name = "datedebut"/>
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name = "dateDebut"/>
       </div>
       <div>
         <label class="block text-gray-700">Date fin</label>
-        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="datefin" />
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="dateFin" />
       </div>
     </form>
-    <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+    <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700" name="createtache">
       Créer
     </button>
   </div>
@@ -106,7 +107,7 @@ if (isset($_POST["createtache"])){
   echo"LA tache a ete cree";
 
 }
-if (isset($_POST["activite"])){
+if (isset($_POST["createactivite"])){
   $nomTache = $_POST["nomActivite"];
   $description = $_POST["description"];
   $dateDebut = $_POST["dateDebut"];
@@ -114,6 +115,7 @@ if (isset($_POST["activite"])){
 
   echo "valeur est  ";
 
+  
 
 }
 ?>

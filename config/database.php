@@ -11,7 +11,7 @@ use PDOException;
 
 
 function db_connection() {
-    $db_conn = $_ENV['DB_CONNECTION'];
+   // $db_conn = $_ENV['DB_CONNECTION'];
     $host_name = "localhost";
     $username = "root";
     $pwd = "";
