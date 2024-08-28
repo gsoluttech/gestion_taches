@@ -15,13 +15,15 @@ class EmployeProjet
     private $email;
     private $roleUser;
     private $idUser;
+    private $motDePasse;
 
-    public function __construct($matricule, $noms, $email, $roleUser, $idUser) {
+    public function __construct($matricule, $noms, $email, $roleUser, $idUser, $motDePasse) {
         $this->matricule=$matricule;
         $this->noms=$noms;
         $this->email=$email;
         $this->roleUser=$roleUser;
         $this->idUser=$idUser;
+        $this->motDePasse=$motDePasse;
     }
 
     public function addUserProject() {
@@ -110,6 +112,24 @@ class EmployeProjet
             }
         } catch (Exception $e) {
             return 'Erreur';
+        }
+    }
+
+    public function changePassword() {
+        $bdd = Database\db_connection();
+
+        if ($bdd instanceof PDO) {
+
+            $req = $bdd->prepare("UPDATE temploye SET MotDePasse=:MotDePasse WHERE matricule=:matricule");
+
+            $req->bindParam(':MotDePasse', $this->motDePasse);
+            $req->bindParam('matricule', $this->matricule);
+
+            if ($req->execute()) {
+                return 'Mot de passe modifier';
+            } else {
+                return 'erreur';
+            }
         }
     }
 }
