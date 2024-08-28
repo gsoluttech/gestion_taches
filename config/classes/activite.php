@@ -13,7 +13,7 @@ class Activites {
 function AddActivity($nomActivite, $date_Debut, $Date_Fin, $Description, $duree_estimee) {
     $conn = Database\db_connection();
     global $last;
-    $lastActivity = $conn->prepare("SELECT * FROM tprojet ORDER BY id DESC LIMIT 1");
+    $lastActivity = $conn->prepare("SELECT * FROM tprojet ORDER BY idProjet DESC LIMIT 1");
     $lastActivity->execute();
     $rowCount = $lastActivity->rowCount();
     $resultats = $lastActivity->fetch(PDO::FETCH_ASSOC);
