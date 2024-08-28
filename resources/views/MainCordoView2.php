@@ -1,9 +1,7 @@
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
 
 
-<div class="bg-gray-50 min-h-screen flex items-center justify-center">
-    <div class="bg-white w-full max-w-3xl rounded-lg shadow-lg p-8">
+<div class="w-full bg-gray-50 min-h-screen flex items-center justify-center hidden" id="addNewProject">
+    <div class="bg-white w-full rounded-lg shadow-lg p-8">
         <!-- Section du projet en cours -->
         <div>
             <h2 class="text-lg font-semibold text-gray-700 mb-4">Projet en cours</h2>

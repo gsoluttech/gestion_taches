@@ -2,8 +2,8 @@
     <div class="logo">Weka Tsk</div>
     <ul class="nav-links">
         <li id="apercu" onclick="apercu();"><a href="#"><i class='bx bx-grid-alt'></i> Aperçu</a></li>
-        <li id="tache" class="border-solid border-2 border-gray-100 bg-gray-100 py-2 px-4 rounded-lg" onclick="tache();"><a href="#"><i class='bx bx-book'></i> Tache</a></li>
-        <li id="superviseur" onclick="superviseur();"><a href="#"><i class='bx bx-user'></i> Superviseur</a></li>
+        <li id="tache" class="sidebarSelect" onclick="tache();"><i class='bx bx-book'></i> Tache</li>
+        <li id="superviseur" class="" onclick="superviseur();"><a href="#"><i class='bx bx-user'></i> Superviseur</a></li>
         <li id="messages" onclick="messages();"><a href="#"><i class='bx bx-message-square-detail'></i> Messages</a></li>
         <li id="parametre" onclick="parametre();"><a href="#"><i class='bx bx-cog'></i> Paramètre</a></li>
     </ul>

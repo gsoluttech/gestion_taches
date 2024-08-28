@@ -1,4 +1,4 @@
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 
 <?php 
   require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'projet.php';
@@ -6,7 +6,7 @@
   require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'activite.php';
 ?>
 
-<div class="p-8">
+<div class="w-full p-8">
   <!-- creation du projet -->
   <div class="mb-8">
     <h2 class="text-xl font-semibold mb-4">Créer un projet</h2>
