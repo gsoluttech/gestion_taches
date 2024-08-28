@@ -66,6 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $sessionclasse->add_session();
 
                             if (strval($role) == '1') {
+                                echo "Role : " . $role;
                                 header('Location: ../../../resources/views/CordoView.php');
                                 exit();
                             } else if (strval($role) == '2') {

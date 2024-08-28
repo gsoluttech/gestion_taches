@@ -14,15 +14,18 @@ function AddProject($nomProjet, $date_Debut, $Date_Fin, $Description) {
     $conn = Database\db_connection();
 
     echo "Methode";
-    $sql = "INSERT INTO tprojet (NomProjet, DateDebut, DateFin, description_Projet)
-            VALUES (:NomProjet, :Date_Debut, :Date_Fin, :Description)";
+    $status = "En cours";
+    $sql = "INSERT INTO tprojet (NomProjet, DateDebut, DateFin, description_Projet, Statut)
+            VALUES (:NomProjet, :Date_Debut, :Date_Fin, :Description, :Statut)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":NomProjet", $nomProjet);
     $stmt->bindParam(":Date_Debut", $date_Debut);
     $stmt->bindParam(":Date_Fin", $Date_Fin);
     $stmt->bindParam(":Description", $Description);
+    $stmt->bindParam(":Statut", $status);
+
     if ($stmt->execute()) {
-        echo "Nouveau Projet ajouté avec succès.";
+        echo "Nouveau Projet ajouté avec succès."; 
     } else {
         echo "Erreur: ";
     } 
