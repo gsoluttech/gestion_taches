@@ -37,19 +37,19 @@
     <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
         <label class="block text-gray-700">Nom</label>
-        <input type="text" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
+        <input type="text" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="nomActivite" />
       </div>
       <div>
         <label class="block text-gray-700">Description</label>
-        <textarea class="mt-1 p-2 block w-full border border-gray-300 rounded-md"></textarea>
+        <textarea class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="description"></textarea>
       </div>
       <div>
         <label class="block text-gray-700">Date début</label>
-        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name = "datedebut" />
       </div>
       <div>
         <label class="block text-gray-700">Date fin</label>
-        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="datefin" />
       </div>
     </form>
     <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
@@ -63,23 +63,19 @@
     <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
         <label class="block text-gray-700">Nom</label>
-        <input type="text" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
+        <input type="text" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="nomTache" />
       </div>
       <div>
         <label class="block text-gray-700">Description</label>
-        <textarea class="mt-1 p-2 block w-full border border-gray-300 rounded-md"></textarea>
+        <textarea class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name = "description"></textarea>
       </div>
       <div>
         <label class="block text-gray-700">Date début</label>
-        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name = "datedebut"/>
       </div>
       <div>
         <label class="block text-gray-700">Date fin</label>
-        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
-      </div>
-      <div>
-        <label class="block text-gray-700">Priorité</label>
-        <input type="text" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="datefin" />
       </div>
     </form>
     <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
@@ -111,7 +107,7 @@ if (isset($_POST["createtache"])){
 
 }
 if (isset($_POST["activite"])){
-  $nomTache = $_POST["nomTache"];
+  $nomTache = $_POST["nomActivite"];
   $description = $_POST["description"];
   $dateDebut = $_POST["dateDebut"];
   $dateFin = $_POST["dateFin"];
