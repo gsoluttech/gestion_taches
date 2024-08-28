@@ -133,6 +133,7 @@ if (isset($_POST["createtache"])){
 if (isset($_POST["createactivite"])){
   $nomTache = $_POST["nomActivite"];
 
+}
 
 if (isset($_POST["activitecreate"])){
   $nomTache = $_POST["nomactivité"];
