@@ -1,5 +1,5 @@
 <?php
-namespace config\class\tache;
+namespace config\classes\projet;
 
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'database.php';
 

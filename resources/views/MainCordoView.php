@@ -69,7 +69,6 @@
 
     </form>
 
-  </div>
 
   <!-- creation de la tache" -->
   <div>
