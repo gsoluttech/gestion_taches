@@ -22,9 +22,14 @@ function tache() {
     let parametre = document.getElementById('parametre');
 
     let taskshow = document.getElementById('taskshow');
+    let taskrapport = document.getElementById('taskrapport');
     if (tache) {
         taskshow.classList.remove('hidden');
         taskshow.classList.add('flex');
+
+        taskrapport.classList.add('hidden');
+        taskrapport.classList.remove('flex');
+
         console.log('Available')
     } else {
         console.log('not available');
@@ -37,6 +42,18 @@ function superviseur() {
     let superviseur = document.getElementById('superviseur');
     let messages = document.getElementById('messages');
     let parametre = document.getElementById('parametre');
+
+    let taskrapport = document.getElementById('taskrapport');
+    let taskshow = document.getElementById('taskshow');
+
+    if (taskrapport) {
+        taskrapport.classList.remove('hidden');
+        taskrapport.classList.remove('flex');
+
+        taskshow.classList.remove('flex')
+        taskshow.classList.add('hidden');
+        console.log('djfdskf');
+    }
 
 }
 
