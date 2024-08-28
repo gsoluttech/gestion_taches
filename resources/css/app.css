@@ -9,12 +9,14 @@ body {
 
 .sidebar {
     width: 250px;
+    height: 100vh;
     background-color: #ffffff;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-right: 1px solid #e5e5e5;
+    padding-bottom: 80px;
 }
 
 .logo {
@@ -49,9 +51,10 @@ body {
 }
 
 .help-center {
-    background-color: #212121;
+    background-color: rgba(20, 21, 34, 1);
     color: #ffffff;
     padding: 15px;
+    padding-top: 50px;
     border-radius: 10px;
     text-align: center;
     margin-top: 50px;
@@ -60,6 +63,8 @@ body {
     align-items: center;
     height: 200px;  /* Réduction de la hauteur */
     width: 180px;   /* Réduction de la largeur */
+    position: relative;
+    overflow: hidden;
 }
 
 .help-center i {
@@ -68,13 +73,13 @@ body {
 }
 
 .help-center p {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     margin: 5px 0;
 }
 
 .help-center span {
-    font-size: 10px;
+    font-size: 12px;
     margin: 5px 0;
     text-align: center;
 }
@@ -87,9 +92,49 @@ body {
     font-size: 10px;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
+    width: 80%;
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+}
+.sidebar .container-help {
+    height: 200px;  /* Réduction de la hauteur */
+    width: 180px; 
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+.help-icon {
+    background-color: rgba(20, 21, 34, 1);
+    color: #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border: #ffffff solid 5px;
+    top: 4px;
+}
+.help-center .circle-help1 {
+    background-color: rgb(42, 44, 70);
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:-35px;
+    left:-35px;
 }
 
+.help-center .circle-help2 {
+    background-color: rgb(42, 44, 70);
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom:-35px;
+    right:-35px;
+    z-index: 1;
+}
 .main-content {
     flex: 1;
     padding: 20px;

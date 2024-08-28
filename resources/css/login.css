@@ -1,83 +1,12 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+.bodycolor {
+    background-color: rgb(204, 204, 221, 161, 161, 248,148, 148, 241);
 }
-.container { 
-    display: flex;
-    width: 800px;
-    height: 400px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+.containerH {
+    height: calc(100vh - 100px);
 }
-.welcome-section {
-    flex: 1;
-    background: linear-gradient(135deg, #ffa17f, #00223e);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-}
-.login-section {
-    flex: 1;
-    background-color: #ffff;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.login-section h2 {
-    margin: 0 0 20px;
-    font-size: 1.5rem;
-    color: #333;
-}
-.login-section form {
-    display: flex;
-    flex-direction: column;
-}
-.login-section input[type="text"],
-.login-section input[type="password"] {
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-.login-section input[type="checkbox"] {
-    margin-right: 10px;
-}
-.login-section label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    color: #666;
-    font-size: 0.9rem;
-}
-.login-section button {
-    padding: 10px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    background-color: #6a0dad;
-    color: white;
-    cursor: pointer;
-}
-.login-section a {
-    text-decoration: none;
-    color: #6a0dad;
-    font-size: 0.9rem;
-    margin-top: 10px;
-    text-align: center;
-}
-.login-section .forgot-password {
-    color: #6a0dad;
-    font-size: 0.9rem;
-    text-align: right;
-    margin-bottom: 20px;
-    display: block;
+
+.backgrnd_drop {
+    background-image: url('../src/assets/bg_blackdrop.jpg');
+
 }

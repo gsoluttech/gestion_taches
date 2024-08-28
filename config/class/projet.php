@@ -5,18 +5,27 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'database.php';
 
 use config\Database;
 $conn = Database\db_connection();
-function AddProject($nomProjet, $date_Debut, $Date_Fin, $Description, $idProjet) {
+
+class Project {
+
+
+
+function AddProject($nomProjet, $date_Debut, $Date_Fin, $Description) {
     $conn = Database\db_connection();
-    $sql = "INSERT INTO TProjet (NomProjet, Date_Debut, Date_Fin, Description, IdProjet)
-            VALUES (:NomProjet, :Date_Debut, :Date_Fin, :Description, :IdProjet)";
+
+    echo "Methode";
+    $status = "En cours";
+    $sql = "INSERT INTO tprojet (NomProjet, DateDebut, DateFin, description_Projet, Statut)
+            VALUES (:NomProjet, :Date_Debut, :Date_Fin, :Description, :Statut)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":NomProjet", $nomProjet);
     $stmt->bindParam(":Date_Debut", $date_Debut);
     $stmt->bindParam(":Date_Fin", $Date_Fin);
     $stmt->bindParam(":Description", $Description);
-    $stmt->bindParam(":idProjet",$idProjet);
+    $stmt->bindParam(":Statut", $status);
+
     if ($stmt->execute()) {
-        echo "Nouveau Projet ajouté avec succès.";
+        echo "Nouveau Projet ajouté avec succès."; 
     } else {
         echo "Erreur: ";
     } 
@@ -72,4 +81,5 @@ function DeleteProjetct($idProjet) {
     return null;
 };*/
 /*$conn->close();*/
+}
 ?>
