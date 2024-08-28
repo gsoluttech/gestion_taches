@@ -97,7 +97,26 @@ if (isset($_POST["createproject"])) {
   $dateDebut = $_POST["dateDebut"];
   $dateFin = $_POST["dateFin"];
 
-  echo "Valeur aredsjkfhd";
+  echo "Le projet a ete cree";
+
+
+}
+if (isset($_POST["createtache"])){
+  $nomTache = $_POST["nomTache"];
+  $description = $_POST["description"];
+  $dateDebut = $_POST["dateDebut"];
+  $dateFin = $_POST["dateFin"];
+
+  echo"LA tache a ete cree";
+
+}
+if (isset($_POST["activite"])){
+  $nomTache = $_POST["nomTache"];
+  $description = $_POST["description"];
+  $dateDebut = $_POST["dateDebut"];
+  $dateFin = $_POST["dateFin"];
+
+  echo "valeur est  ";
 
 
 }
