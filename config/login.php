@@ -4,6 +4,9 @@ require_once 'database.php';
 
 use config\Database;
 
+// $authUrl = $client->createAuthUrl();
+// header('Location: ' . filter_var($authUrl, FILTER_SANITIZE_URL));
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['signup'])) {
@@ -43,4 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
+
 ?>

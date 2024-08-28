@@ -9,7 +9,9 @@
 </head>
 <body>
 
-<?php require_once 'sidebaruser.php'; ?>
+<?php 
+    require_once 'sidebaruser.php'; 
+?>
  
 <div class="main-content">
     <header>
@@ -26,40 +28,7 @@
         </div>
     </header>
     <div class="content">
-        <div class="task-container">
-            <div class="task-header">
-                <h2>Nom tâche</h2>
-                <span>Durée</span>
-                <span>Priorité</span>
-                <span>Status</span>
-            </div>
-            <div class="task-item">
-                <span class="task-name">Nom tâche</span>
-                <span class="task-duration">Durée</span>
-                <span class="task-priority">Priorité</span>
-                <span class="task-status in-progress">En cours</span>
-            </div>
-            <div class="task-item">
-                <span class="task-name">Nom tâche</span>
-                <span class="task-duration">Durée</span>
-                <span class="task-priority">Priorité</span>
-                <span class="task-status in-progress">En cours</span>
-            </div>
-                <div class="task-item">
-                    <span class="task-name">Nom tâche</span>
-                    <span class="task-duration">Durée</span>
-                    <span class="task-priority">Priorité</span>
-                    <span class="task-status completed">Terminé</span>
-                </div>
-                    <div class="task-item">
-                        <span class="task-name">Nom tâche</span>
-                        <span class="task-duration">Durée</span>
-                        <span class="task-priority">Priorité</span>
-                        <span class="task-status in-progress">En cours</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
 </body>

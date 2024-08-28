@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 27 août 2024 à 12:19
+-- Généré le : lun. 26 août 2024 à 12:39
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `tactivite`;
 CREATE TABLE IF NOT EXISTS `tactivite` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL,
   `Nom` varchar(250) DEFAULT NULL,
   `description_activite` text,
   `type_activite` varchar(250) DEFAULT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `tactivite` (
 
 DROP TABLE IF EXISTS `tbeneficiaire`;
 CREATE TABLE IF NOT EXISTS `tbeneficiaire` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL,
   `Nom` varchar(250) DEFAULT NULL,
   `Phone` varchar(250) DEFAULT NULL,
   `Email` varchar(250) DEFAULT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `tbeneficiaire` (
 
 DROP TABLE IF EXISTS `tdocument`;
 CREATE TABLE IF NOT EXISTS `tdocument` (
-  `idDoc` int NOT NULL AUTO_INCREMENT,
+  `idDoc` int NOT NULL,
   `titre` varchar(250) DEFAULT NULL,
   `Created_at` datetime DEFAULT NULL,
   `Auteur` varchar(250) DEFAULT NULL,
@@ -96,13 +96,6 @@ CREATE TABLE IF NOT EXISTS `temploye` (
   PRIMARY KEY (`matricule`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Déchargement des données de la table `temploye`
---
-
-INSERT INTO `temploye` (`matricule`, `Noms`, `Email`, `Phone`, `Adresse`, `sexe`, `Poste`, `MotDePasse`, `FK_equipe`, `FK_role`) VALUES
-('josiasITC24_34329', 'Besodia Kabambi Josias', 'djo@gmail.com', '0987654321', 'keshero, goma', 'masculin', 'ITC', 'admin', NULL, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -111,7 +104,7 @@ INSERT INTO `temploye` (`matricule`, `Noms`, `Email`, `Phone`, `Adresse`, `sexe`
 
 DROP TABLE IF EXISTS `tequipe`;
 CREATE TABLE IF NOT EXISTS `tequipe` (
-  `idEquipe` int NOT NULL AUTO_INCREMENT,
+  `idEquipe` int NOT NULL,
   `nomEquipe` varchar(100) DEFAULT NULL,
   `description_Equipe` text,
   `FK_Project` int DEFAULT NULL,
@@ -126,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `tequipe` (
 
 DROP TABLE IF EXISTS `tinfrastructure`;
 CREATE TABLE IF NOT EXISTS `tinfrastructure` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL,
   `Nom` varchar(250) DEFAULT NULL,
   `Avenue` varchar(250) DEFAULT NULL,
   `Quartier` varchar(250) DEFAULT NULL,
@@ -144,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `tinfrastructure` (
 
 DROP TABLE IF EXISTS `tnotification`;
 CREATE TABLE IF NOT EXISTS `tnotification` (
-  `idNotification` int NOT NULL AUTO_INCREMENT,
+  `idNotification` int NOT NULL,
   `message_contenu` varchar(250) DEFAULT NULL,
   `DateNotif` datetime DEFAULT NULL,
   `TypeNotif` varchar(100) DEFAULT NULL,
@@ -174,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `tpassword_reset` (
 
 DROP TABLE IF EXISTS `tprojet`;
 CREATE TABLE IF NOT EXISTS `tprojet` (
-  `idProjet` int NOT NULL AUTO_INCREMENT,
+  `idProjet` int NOT NULL,
   `NomProjet` varchar(250) DEFAULT NULL,
   `description_Projet` text,
   `DateDebut` date DEFAULT NULL,
@@ -192,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `tprojet` (
 
 DROP TABLE IF EXISTS `tressources`;
 CREATE TABLE IF NOT EXISTS `tressources` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL,
   `designation` varchar(250) DEFAULT NULL,
   `type_ressource` varchar(250) DEFAULT NULL,
   `Quantite` int DEFAULT NULL,
@@ -209,20 +202,10 @@ CREATE TABLE IF NOT EXISTS `tressources` (
 
 DROP TABLE IF EXISTS `trole`;
 CREATE TABLE IF NOT EXISTS `trole` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL,
   `nom` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `trole`
---
-
-INSERT INTO `trole` (`id`, `nom`) VALUES
-(1, 'coordonateur'),
-(2, 'superviseur technique'),
-(3, 'superviseur administratif'),
-(4, 'employé simple');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -232,13 +215,11 @@ INSERT INTO `trole` (`id`, `nom`) VALUES
 
 DROP TABLE IF EXISTS `tsessions`;
 CREATE TABLE IF NOT EXISTS `tsessions` (
-  `ROWID` int NOT NULL AUTO_INCREMENT,
   `ID` varchar(250) DEFAULT NULL,
   `Ip_adress` varchar(250) DEFAULT NULL,
   `Payload` text,
   `Last_activity` varchar(250) DEFAULT NULL,
-  `FK_Employe` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`ROWID`)
+  `FK_Employe` varchar(250) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -249,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `tsessions` (
 
 DROP TABLE IF EXISTS `ttaches`;
 CREATE TABLE IF NOT EXISTS `ttaches` (
-  `idTaces` int NOT NULL AUTO_INCREMENT,
+  `idTaces` int NOT NULL,
   `NomTache` varchar(250) DEFAULT NULL,
   `desciption_tache` text,
   `Priorite` varchar(50) DEFAULT NULL,
