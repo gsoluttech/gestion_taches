@@ -4,17 +4,40 @@ namespace config\classes\tache;
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'database.php';
 
 use config\Database;
+use PDO;
 $conn = Database\db_connection();
-function AddActivity($nomActivite, $date_Debut, $Date_Fin, $Description, $idProjet) {
+
+class Activites {
+
+
+function AddActivity($nomActivite, $date_Debut, $Date_Fin, $Description, $duree_estimee) {
     $conn = Database\db_connection();
-    $sql = "INSERT INTO TActivite (NomActivite, Date_Debut, Date_Fin, Description, IdActivite)
-            VALUES (:NomActivite, :Date_Debut, :Date_Fin, :Description, :IdActivite)";
+    global $last;
+    $lastActivity = $conn->prepare("SELECT * FROM tprojet ORDER BY id DESC LIMIT 1");
+    $lastActivity->execute();
+    $rowCount = $lastActivity->rowCount();
+    $resultats = $lastActivity->fetch(PDO::FETCH_ASSOC);
+
+    if ($rowCount != 0) {
+        foreach ($resultats as $resultat) {
+            $last = $resultats['idProjet'];
+        }
+    }
+
+    $status = "En cours";
+    $sql = "INSERT INTO TActivite (Nom, description_activite, type_activite, duree_estimee, dateDebut, dateFin, Statut, FK_Project)
+            VALUES (:Nom, :description_activite, :type_activite, :duree_estimee, :dateDebut, :dateFin, :Statut, :FK_Project)";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(":NomActivite", $nomActivite);
-    $stmt->bindParam(":Date_Debut", $date_Debut);
-    $stmt->bindParam(":Date_Fin", $Date_Fin);
-    $stmt->bindParam(":Description", $Description);
-    $stmt->bindParam(":idProjet",$idActivite);
+    $stmt->bindParam(":Nom", $nomActivite);
+    $stmt->bindParam(":description_activite", $Description);
+    $stmt->bindParam(":type_activite", $Date_Fin);
+    $stmt->bindParam(":duree_estimee", $duree_estimee);
+    $stmt->bindParam(":dateDebut",$date_Debut);
+    $stmt->bindParam(":dateFin",$Date_Fin);
+    $stmt->bindParam(":Statut",$status);
+    $stmt->bindParam(":FK_Project",$last);
+
+
     if ($stmt->execute()) {
         echo "Nouvel activite ajouté avec succès.";
     } else {
@@ -72,4 +95,5 @@ function DeleteActivity($idActivity) {
     return null;
 };*/
 /*$conn->close();*/
+}
 ?>

@@ -1,9 +1,12 @@
 <?php
-namespace config\class\tache;
+namespace config\classes\tache;
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'database.php';
 
 use config\Database;
 $conn = Database\db_connection();
+
+class Taches { 
+
 
 function AddTache($nomTache, $date_Debut, $Date_Fin, $Priorite, $Description, $idProjet) {
     $conn = Database\db_connection();
@@ -56,7 +59,7 @@ function DeleteTache($idTaches) {
         echo "Erreur de suppression de la tache: ";
     }
 }
-    return null;
+    // return null;
     /*function recupererTache($idTaches) {
 
     $sql = "SELECT * FROM TTaches WHERE IdTaches = ?";
@@ -81,4 +84,5 @@ function DeleteTache($idTaches) {
     }*/
 
 /*$conn->close();*/
+}
 ?>
