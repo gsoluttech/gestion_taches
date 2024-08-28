@@ -24,7 +24,7 @@ if (isset($_POST['createProject'])) {
     // $class_project = new Project();
     $password_hash = password_hash($idProjet, PASSWORD_DEFAULT);
 
-    $class_users = new User($nom_project, $description_p, $dateDebut, $password_hash);
+   /* $class_users = new User($nom_project, $description_p, $dateDebut, $password_hash);*/
 
     $class_users->User_signup();
     // $class_project->modifyProject($idProjet,$nom_project, $description_p, $dateDebut, $dateFin);
@@ -37,7 +37,7 @@ if (isset($_POST['createProject'])) {
 if (isset($_POST['deleteP'])) {
     $id_project = $_POST['idprojet'];
 
-    $classProject = new Project();
+    /*$classProject = new Project();*/
 
     echo $classProject->deleteProject($id_project);
 }
@@ -48,7 +48,7 @@ if (isset($_POST['createNotif'])) {
 
     $name_datenotif = "";
 
-    $class_notif=new Notification($message_text, $name_datenotif, $type_notif, $id_user);
+    /*$class_notif=new Notification($message_text, $name_datenotif, $type_notif, $id_user);*/
 
     $class_notif->create_notification($message_text, $name_datenotif, $type_notif, $id_user);
 }
