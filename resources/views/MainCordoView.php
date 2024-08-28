@@ -36,7 +36,11 @@
     <form class="grid grid-cols-1 md:grid-cols-2 gap-4" method="post">
       <div>
         <label class="block text-gray-700">Nom</label>
+
+        <input type="text" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="nomActivite" />
+
         <input type="text" class="mt-1 p-2 block w-full border border-gray-300 rounded-md"  name="nomactivité"/>
+
       </div>
       <div>
         <label class="block text-gray-700">Description</label>
@@ -44,6 +48,17 @@
       </div>
       <div>
         <label class="block text-gray-700">Date début</label>
+
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name = "dateDebut" />
+      </div>
+      <div>
+        <label class="block text-gray-700">Date fin</label>
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="dateFin" />
+      </div>
+      <button type="submit" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700" name ="createactivite">
+      Créer
+    </button>
+
         <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="dateDebut"/>
       </div>
       <div>
@@ -51,6 +66,7 @@
         <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="dateFin"/>
       </div>
       <input type="submit" name="activitecreate" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700" value="Créer">
+
     </form>
 
   </div>
@@ -61,26 +77,26 @@
     <form class="grid grid-cols-1 md:grid-cols-2 gap-4" method="post">
       <div>
         <label class="block text-gray-700">Nom</label>
+
+        <input type="text" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="nomTache" />
+
         <input type="text" class="mt-1 p-2 block w-full border border-gray-300 rounded-md"/>
+
       </div>
       <div>
         <label class="block text-gray-700">Description</label>
-        <textarea class="mt-1 p-2 block w-full border border-gray-300 rounded-md"></textarea>
+        <textarea class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name = "description"></textarea>
       </div>
       <div>
         <label class="block text-gray-700">Date début</label>
-        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name = "dateDebut"/>
       </div>
       <div>
         <label class="block text-gray-700">Date fin</label>
-        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
-      </div>
-      <div>
-        <label class="block text-gray-700">Priorité</label>
-        <input type="text" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
+        <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="dateFin" />
       </div>
     </form>
-    <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+    <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700" name="createtache">
       Créer
     </button>
   </div>
@@ -114,8 +130,14 @@ if (isset($_POST["createtache"])){
   // echo $newTaches->AddTache($nomActivite, $date_Debut, $Date_Fin, $Description, $duree_estimee);
 }
 
+if (isset($_POST["createactivite"])){
+  $nomTache = $_POST["nomActivite"];
+
+}
+
 if (isset($_POST["activitecreate"])){
   $nomTache = $_POST["nomactivité"];
+
   $description = $_POST["description"];
   $dateDebut = $_POST["dateDebut"];
   $dateFin = $_POST["dateFin"];
@@ -123,8 +145,12 @@ if (isset($_POST["activitecreate"])){
   $startDateTime = new DateTime($dateDebut);
   $endDateTime = new DateTime($dateFin);
 
+
+  
+
   // Calculer la différence entre les deux dates
   $interval = $startDateTime->diff($endDateTime);
+
 
   // Afficher la durée en jours, mois, années, etc.
   $duree_estimee =  $interval->format('%y années, %m mois, %d jours');
