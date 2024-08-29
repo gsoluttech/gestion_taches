@@ -78,10 +78,8 @@ function DeleteActivity($idActivity) {
 
 function recupererProjet($idProjet) {
     $conn = Database\db_connection();
-    $sql = "SELECT * FROM tactivite WHERE FK_Project = ?";
-    
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam("i", $idProjet);
+    $stmt = $conn->prepare("SELECT * FROM tactivite WHERE FK_Project = ?");
+    $stmt->execute(array($idProjet));
 
     $total = $stmt->rowCount();
     $resultats = $stmt->fetchAll(PDO::FETCH_ASSOC);

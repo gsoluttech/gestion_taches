@@ -177,3 +177,26 @@ function Equipes() {
         equipeShow.classList.remove('hidden');
     }
 }
+
+
+function showActivity() {
+    let ProjectShowDetails = document.getElementById("ProjectShowDetails");
+    let showActivity = document.getElementById("showActivity");
+
+    if (showActivity) {
+        showActivity.classList.remove('hidden');
+        showActivity.classList.add('flex');
+
+        console.log('Activités show');
+        // console.log(showActivity);
+    } else {
+        console.log('showActivity not found');
+    }
+}
+
+const div = document.getElementById('ProjectShowDetails');
+
+div.addEventListener('click', function() {
+    alert('Click showActivity')
+    console.log('Click showActivity');
+})

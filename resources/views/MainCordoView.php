@@ -102,7 +102,7 @@
 <?php  
 use config\classes\projet\Project;
 use config\classes\tache\Taches;
-use config\classes\tache\Activites;
+use config\classes\activite\Activites;
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
