@@ -88,12 +88,18 @@ function apercu() {
     let TachesCo = document.getElementById('TachesCo');
     let NewProjetCo = document.getElementById('NewProjetCo');
     let EquipesCo = document.getElementById('EquipesCo');
+
+    let apercuView = document.getElementById('apercuView');
     
     if (apercuCo) {
         NewProjetCo.classList.remove("sidebarSelect");
         apercuCo.classList.add("sidebarSelect");
         TachesCo.classList.remove("sidebarSelect");
         EquipesCo.classList.remove("sidebarSelect");
+
+        apercuView.classList.add('flex');
+        apercuView.classList.remove('hidden');
+        console.log('apercuView');
     }
 }
 

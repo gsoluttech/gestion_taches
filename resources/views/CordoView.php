@@ -50,7 +50,7 @@
                 ?>
             </div>
 
-            <div id="apercuView" class="w-full relative h-full hidden>
+            <div id="apercuView" class="w-full relative h-full flex>
                 <?php
                     require_once 'accueil.php';
                 ?>
