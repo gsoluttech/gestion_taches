@@ -45,8 +45,8 @@
         <div class="w-1/2 relative hidden md:block">
             <img src="../resources/src/assets/office.jpg" alt="Bookshelf" class="h-full w-full object-cover rounded-r-lg">
             <div class="absolute bottom-0 bg-white bg-opacity-60 p-6 rounded-tl-lg">
-                <p class="text-lg italic">"We’ve been using Untitled to kick start every new project and can’t imagine working without it."</p>
-                <p class="mt-4 font-bold">Andi Lane</p>
+                <p class="text-lg italic">"We’ve been using Weka Task app to kick start every new project and can’t imagine working without it."</p>
+                <p class="mt-4 font-bold">Team 243</p>
                 <p class="text-sm text-gray-500">Founder, Catalog Web Design Agency</p>
             </div>
         </div>
