@@ -1,7 +1,7 @@
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
 
-<script src="../js/app.js" defer></script>
+<script src="../js/app.js" defer></script> -->
 <?php
     require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'projet.php';
     require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'activite.php';
@@ -14,7 +14,7 @@
 
     $activite = new Activites();
 ?>
-<div class="">
+<div class="w-full">
     <div class="w-full h-full p-10 flex flex-wrap justify-center" id="containerProjectShow">
             <?php
                 foreach($allproject as $proj) {

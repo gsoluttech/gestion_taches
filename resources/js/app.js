@@ -90,6 +90,8 @@ function apercu() {
     let EquipesCo = document.getElementById('EquipesCo');
 
     let apercuView = document.getElementById('apercuView');
+    let taskshowCoordo = document.getElementById('taskshowCoordo');
+    let addNewProject = document.getElementById('addNewProject');
     
     if (apercuCo) {
         NewProjetCo.classList.remove("sidebarSelect");
@@ -99,6 +101,16 @@ function apercu() {
 
         apercuView.classList.add('flex');
         apercuView.classList.remove('hidden');
+
+        taskshowCoordo.classList.remove('flex');
+        taskshowCoordo.classList.add('hidden');
+
+        addNewProject.classList.remove('flex')
+        addNewProject.classList.add('hidden');
+
+        equipeShow.classList.add('hidden');
+        equipeShow.classList.remove('flex');
+
         console.log('apercuView');
     }
 }
@@ -118,11 +130,17 @@ function Taches() {
         TachesCo.classList.add('sidebarSelect');
         EquipesCo.classList.remove('sidebarSelect');
 
+        apercuView.classList.add('flex');
+        apercuView.classList.remove('hidden');
+
         taskshowCoordo.classList.remove('hidden');
         taskshowCoordo.classList.add('flex');
 
         addNewProject.classList.remove('flex')
         addNewProject.classList.add('hidden');
+
+        equipeShow.classList.add('hidden');
+        equipeShow.classList.remove('flex');
     }
 }
 
@@ -142,11 +160,17 @@ function NewProjet() {
         TachesCo.classList.remove("sidebarSelect");
         EquipesCo.classList.remove("sidebarSelect");
 
+        apercuView.classList.add('hidden');
+        apercuView.classList.remove('flex');
+
         taskshowCoordo.classList.remove('flex');
         taskshowCoordo.classList.add('hidden');
 
         addNewProject.classList.remove('hidden')
         addNewProject.classList.add('flex');
+
+        equipeShow.classList.add('hidden');
+        equipeShow.classList.remove('flex');
 
         headerCoordo.classList.add('hidden');
         headerCoordo.classList.remove('flex');
@@ -169,6 +193,9 @@ function Equipes() {
         apercuCo.classList.remove('sidebarSelect');
         TachesCo.classList.remove('sidebarSelect');
         EquipesCo.classList.add('sidebarSelect');
+
+        apercuView.classList.add('flex');
+        apercuView.classList.remove('hidden');
 
         taskshowCoordo.classList.remove('flex');
         taskshowCoordo.classList.add('hidden');

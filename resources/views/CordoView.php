@@ -52,7 +52,7 @@
 
             <div id="apercuView" class="w-full relative h-full flex>
                 <?php
-                    require_once 'accueil.php';
+                    require_once 'accueidl.php';
                 ?>
             </div>
         </div>
