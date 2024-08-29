@@ -1,3 +1,10 @@
+<?php
+                    require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'projet.php';
+                    require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'activite.php';
+    
+                    use config\classes\projet\Project;
+                    use config\classes\activite\Activites;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +25,17 @@
             <div class="w-full h-42 mx-10 my-5" id="headerCoordo">
                 <?php require_once 'header.php';?>
             </div>
+
+            <div id="apercuView" class="w-full relative h-full flex">
+                <?php
+                $projet = new Project();
+                $allproject = $projet->recupererProjet();
+
+                $activite = new Activites();
+                    require_once 'accueil.php';
+                ?>
+            </div>
+            
             <div class="w-3/3 h-42 mx-10 my-5 justify-center items-center hidden"  id="taskshowCoordo"> 
                 <table class="min-h-screen text-left border-collapse flex flex-col">
                     <thead>
@@ -50,11 +68,7 @@
                 ?>
             </div>
 
-            <div id="apercuView" class="w-full relative h-full flex>
-                <?php
-                    require_once 'accueil.php';
-                ?>
-            </div>
+
         </div>
     </div>
 </body>

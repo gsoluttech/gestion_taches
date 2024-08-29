@@ -76,7 +76,7 @@ function recupererProjet() {
 
         return $resultat;
     } else {
-        return 'Aucun projet créer';
+        echo 'error';
     }
 
 }
