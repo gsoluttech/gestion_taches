@@ -1,5 +1,5 @@
 <?php
-namespace config\classes\tache;
+namespace config\classes\activite;
 
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'database.php';
 
@@ -75,25 +75,20 @@ function DeleteActivity($idActivity) {
         echo "Erreur de suppression de l'activite: " ;
     }
 }
-/*function recupererProjet($idProjet) {
+
+function recupererProjet($idProjet) {
     $conn = Database\db_connection();
-    $sql = "SELECT * FROM TActivite WHERE IdActivite = ?";
+    $stmt = $conn->prepare("SELECT * FROM tactivite WHERE FK_Project = ?");
+    $stmt->execute(array($idProjet));
+
+    $total = $stmt->rowCount();
+    $resultats = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam("i", $idActivite);
-    
-    if ($stmt->execute()) {
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            return $result->fetch_assoc();
-        } else {
-            echo "Aucune activite n'a ete trouvé.";
-        }
+    if ($total != 0) {
+        return $resultats;
     } else {
-        echo "Erreur: ";
-    };
-    return null;
-};*/
-/*$conn->close();*/
+        return "Activités correspondate non trouvée";
+    }
+}
 }
 ?>

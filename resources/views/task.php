@@ -14,19 +14,7 @@
 <?php require_once 'sidebaruser.php'; ?>
 
 <div class="main-content">
-    <header>
-        <div class="explorer">Explorer</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search">
-            <i class='bx bx-search'></i>
-        </div>
-        <div class="header-right">
-            <button class="category-btn"><i class='bx bx-category'></i> Catégorie</button>
-            <button class="sort-btn"><i class='bx bx-sort'></i> Trié : Déjà fait</button>
-            <i class='bx bx-bell notification-icon'></i>
-            <div class="profile-icon"></div>
-        </div>
-    </header>
+    <?php require_once 'header.php'?>
     <div class="w-full h-screen">
         <table class="w-full text-left border-collapse flex flex-col" id="taskshow">
             <thead>

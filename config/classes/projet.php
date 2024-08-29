@@ -4,6 +4,7 @@ namespace config\classes\projet;
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'database.php';
 
 use config\Database;
+use PDO;
 $conn = Database\db_connection();
 
 class Project {
@@ -61,25 +62,24 @@ function DeleteProjetct($idProjet) {
         echo "Erreur de suppression de la tache: " ;
     }
 }
-/*function recupererProjet($idProjet) {
+
+function recupererProjet() {
     $conn = Database\db_connection();
-    $sql = "SELECT * FROM TProjet WHERE IdProjet = ?";
+    $sql = $conn->prepare("SELECT * FROM TProjet");
     
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam("i", $idProjet);
-    
-    if ($stmt->execute()) {
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            return $result->fetch_assoc();
-        } else {
-            echo "Aucun Projet n'a ete trouvé.";
-        }
+    $sql->execute();
+
+    $total = $sql->rowCount();
+
+    if ($total != 0) {
+        $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+        return $resultat;
     } else {
-        echo "Erreur: ";
-    };
-    return null;
-};*/
-/*$conn->close();*/
+        return 'Aucun projet créer';
+    }
+
+}
+
 }
 ?>

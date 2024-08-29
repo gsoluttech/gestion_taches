@@ -1,11 +1,11 @@
 <div class="sidebar">
     <div class="logo">Weka Tsk</div>
     <ul class="nav-links">
-        <li><a href="#"><i class='bx bx-grid-alt'></i> Aperçu</a></li>
-        <li><a href="#"><i class='bx bx-book'></i> Tache</a></li>
-        <li><a href="#"><i class='bx bx-user'></i> Superviseur</a></li>
-        <li><a href="#"><i class='bx bx-message-square-detail'></i> Messages</a></li>
-        <li><a href="#"><i class='bx bx-cog'></i> Paramètre</a></li>
+        <li id="apercuCo" onclick="apercu();" class="sidebarSelect"><a href="#"><i class='bx bx-grid-alt'></i> Aperçu</a></li>
+        <li id="TachesCo" onclick="Taches();" class=""><a href="#"><i class='bx bx-book'></i> Taches</a></li>
+        <li id="NewProjetCo" onclick="NewProjet();" class=""><a href="#"><i class='bx bx-folder-plus'></i> Nouveau Projet</a></li>
+        <li id="EquipesCo" onclick="Equipes();" class=""><a href="#"><i class='bx bxs-group'></i></i> Equipes</a></li>
+        <li id="ParametreCo" onclick="Parametre();" class=""><a href="#"><i class='bx bx-cog'></i> Paramètre</a></li>
     </ul>
 
     <div class="container-help">
