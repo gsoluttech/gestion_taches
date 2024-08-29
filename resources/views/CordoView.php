@@ -66,7 +66,7 @@
                 <?php 
                     require_once 'equipe.php';
                 ?>
-            </div>
+            </div> 
 
 
         </div>
