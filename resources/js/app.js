@@ -180,23 +180,42 @@ function Equipes() {
 
 
 function showActivity() {
-    let ProjectShowDetails = document.getElementById("ProjectShowDetails");
-    let showActivity = document.getElementById("showActivity");
+    // alert("show showActivity")
+    let btnShowContent = document.getElementById("btnShowContent");
+    let showActivity = document.querySelectorAll('.DetailshowActivity');
 
     if (showActivity) {
+
+        showActivity.forEach(function(actSh) {
+            if (actSh.classList.contains('flex')) {
+                actSh.classList.remove('flex');
+                actSh.classList.add('hidden');
+
+                btnShowContent.textContent = "Voir les activités";
+                console.log('Cacher')
+            } else {
+                actSh.classList.remove('hidden');
+                actSh.classList.add('flex');
+
+                btnShowContent.textContent = "Cacher les activités";
+
+                console.log('Afficher')
+            }
+
+            console.log(actSh.textContent);  // Affiche le contenu de chaque commentaire
+        })
         showActivity.classList.remove('hidden');
         showActivity.classList.add('flex');
 
-        console.log('Activités show');
-        // console.log(showActivity);
+        // console.log('Activités show');
     } else {
         console.log('showActivity not found');
     }
 }
 
-const div = document.getElementById('ProjectShowDetails');
+// const div = document.getElementById('ProjectShowDetails');
 
-div.addEventListener('click', function() {
-    alert('Click showActivity')
-    console.log('Click showActivity');
-})
+// div.addEventListener('click', function() {
+//     alert('Click showActivity')
+//     console.log('Click showActivity');
+// })

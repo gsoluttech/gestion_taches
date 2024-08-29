@@ -49,6 +49,12 @@
                     require_once 'equipe.php';
                 ?>
             </div>
+
+            <div id="apercuView" class="w-full relative h-full hidden>
+                <?php
+                    require_once 'accueil.php';
+                ?>
+            </div>
         </div>
     </div>
 </body>
