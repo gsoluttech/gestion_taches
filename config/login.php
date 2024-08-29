@@ -21,7 +21,6 @@ date_default_timezone_set('Europe/Paris');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['signup'])) {
 
-        $matricule = $_POST['matricule'];
         $email = isset($_POST['email']) ? $_POST['email'] : '';
         $password = isset($_POST['password']) ? $_POST['password'] : '';
 
@@ -78,6 +77,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             } else if (strval($role) == '3') {
                                 header('Location: ../../../resources/views/task.php');
                                 exit();
+                            
+                            } else if (strval($role) == '4') {
+                                header('Location: ../../../resources/views/task.php');
+                                exit();
+                            
                             } else {
                                 echo "Une erreur s'est produite";
                             }

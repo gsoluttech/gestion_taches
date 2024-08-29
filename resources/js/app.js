@@ -130,8 +130,8 @@ function Taches() {
         TachesCo.classList.add('sidebarSelect');
         EquipesCo.classList.remove('sidebarSelect');
 
-        apercuView.classList.add('flex');
-        apercuView.classList.remove('hidden');
+        apercuView.classList.add('hidden');
+        apercuView.classList.remove('flex');
 
         taskshowCoordo.classList.remove('hidden');
         taskshowCoordo.classList.add('flex');
@@ -194,8 +194,8 @@ function Equipes() {
         TachesCo.classList.remove('sidebarSelect');
         EquipesCo.classList.add('sidebarSelect');
 
-        apercuView.classList.add('flex');
-        apercuView.classList.remove('hidden');
+        apercuView.classList.add('hidden');
+        apercuView.classList.remove('flex');
 
         taskshowCoordo.classList.remove('flex');
         taskshowCoordo.classList.add('hidden');
