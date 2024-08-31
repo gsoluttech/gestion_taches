@@ -1,6 +1,7 @@
 <?php
                     require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'projet.php';
                     require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'activite.php';
+                    require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'Tache.php';
     
                     use config\classes\projet\Project;
                     use config\classes\activite\Activites;
@@ -68,8 +69,17 @@
                 ?>
             </div> 
 
-
+            <div class="hidden">
+                <?php
+                    require_once "./ModifTables/modifTache.php";
+                ?>
+            </div>
+            <div class="hidden" > 
+                <?php
+                    require_once "./ModifTables/modifActivite.php";
+                ?>
+            </div>
         </div>
-    </div>
+    </div>        
 </body>
 </html>
