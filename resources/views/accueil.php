@@ -2,6 +2,7 @@
 <div id="accueil" class="w-full">
     <div class="w-full h-full p-6 flex flex-col" id="containerProjectShow">
             <?php
+            if (is_array(($allproject))) { 
                 foreach($allproject as $proj) {
                     $idProjet = $proj['idProjet'];
                     $nomProjet = $proj['NomProjet'];
@@ -64,11 +65,14 @@
                         ";
                     }
                 } else {
-                    // echo $hisActivity;
+                    echo $hisActivity;
                 }
                 echo "</div>";
                     
-                }    
+                }
+            }  else {
+                echo "<div class=\"text-lg text-red-500 text-center border-2 border-solid border-gray-200 bg-gray-200\">$allproject</div>";
+            }
             ?>      
     </div>
 </div>

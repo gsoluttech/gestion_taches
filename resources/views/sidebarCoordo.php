@@ -1,5 +1,8 @@
 <div class="sidebar">
-    <div class="logo">Weka Tsk</div>
+    <div class="logo">
+        <img src="../src/assets/logo.png" alt="" />
+        Weka Tsk
+    </div>
     <ul class="nav-links">
         <li id="apercuCo" onclick="apercu();" class="sidebarSelect"><a href="#"><i class='bx bx-grid-alt'></i> Aperçu</a></li>
         <li id="TachesCo" onclick="Taches();" class=""><a href="#"><i class='bx bx-book'></i> Taches</a></li>
