@@ -17,6 +17,7 @@ date_default_timezone_set('Europe/Paris');
 // $authUrl = $client->createAuthUrl();
 // header('Location: ' . filter_var($authUrl, FILTER_SANITIZE_URL));
 
+global $error;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['signup'])) {
@@ -25,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = isset($_POST['password']) ? $_POST['password'] : '';
 
         if (empty($email) || empty($password)) {
-            echo 'Tous les champs sont réquis';
+            $error = 'Tous les champs sont réquis';
         } else {
             $bdd = Database\db_connection();
 
@@ -83,15 +84,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 exit();
                             
                             } else {
-                                echo "Une erreur s'est produite";
+                                $error = "Une erreur s'est produite";
                             }
                         } else {
-                            echo 'Mot de passe incorrect';
+                            $error = 'Mot de passe incorrect';
                         }
                     }
                 }
             } else {
-                echo 'Compte non trouvé !';
+                $error = 'Compte non trouvé !';
             }
         }
     }

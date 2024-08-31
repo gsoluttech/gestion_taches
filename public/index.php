@@ -31,11 +31,11 @@
                         <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Forgot password?</a>
                     </div>
                 </div>
+                <p class="text-sm text-red-500 text-center"><?php echo $error ?></p>
                 <div>
                     <input type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700" name="signup" value="Sign in">
                 </div>
             </form>
-            
             <div class="w-full h-16 justify-center items-center flex text-center">
                 <p class="absolute bottom-2 text-center text-xs font-medium">&copy; 2024 gsolutech. Tous droit réservés.</p>
             </div>
