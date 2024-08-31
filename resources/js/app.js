@@ -252,3 +252,21 @@ function showActivity() {
 //     alert('Click showActivity')
 //     console.log('Click showActivity');
 // })
+
+// modifier supprimer projet, tache, activite
+
+function showModidifyProject() {
+    alert('showModidifyProject');
+    let showModifyProject = document.getElementById('showModifyProject');
+
+    if (showModifyProject) {
+        showModifyProject.classList.remove('hidden');
+        showModifyProject.classList.add('flex');
+
+        console.log('showModifyProject ');
+    } else {
+        console.log('not found');
+    }
+}
+
+
