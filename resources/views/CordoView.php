@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../css/app.css">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="../js/app.js" defer></script>
+    <script src="../js/app.js"></script>
     <title>Weka Tsk</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
         <div class="w-1/6 fixed">
             <?php require_once 'sidebarCoordo.php';?>
         </div>
-        <div class="w-5/6 absolute right-0">
+        <div class="w-5/6 ml-44 absolute right-0">
             <div class="w-full h-42 mx-10 my-5" id="headerCoordo">
                 <?php require_once 'header.php';?>
             </div>
@@ -37,7 +37,7 @@
                 ?>
             </div>
             
-            <div class="w-3/3 h-42 mx-10 my-5 justify-center items-center hidden"  id="taskshowCoordo"> 
+            <div class="w-full h-42 mx-10 my-5 justify-center items-center hidden"  id="taskshowCoordo"> 
                 <table class="min-h-screen text-left border-collapse flex flex-col">
                     <thead>
                         <tr class="bg-gray-50">
@@ -57,24 +57,24 @@
                     </tbody>
                 </table>
             </div>
-            <div id="addNewProject" class="hidden w-full relative h-full">
+            <div id="addNewProject" class="hidden w-full relative">
                 <?php 
-                    require_once 'MainCordoView.php';
+                    require 'MainCordoView.php';
                 ?>
             </div>
 
             <div id="equipeShow" class="w-full relative h-full hidden">
                 <?php 
-                    require_once 'equipe.php';
+                    require 'equipe.php';
                 ?>
             </div> 
 
-            <div class="hidden">
+            <div class="hidden" id="modifTaches">
                 <?php
                     require_once "./ModifTables/modifTache.php";
                 ?>
             </div>
-            <div class="hidden" > 
+            <div class="hidden" id="modifActivite"> 
                 <?php
                     require_once "./ModifTables/modifActivite.php";
                 ?>

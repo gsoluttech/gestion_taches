@@ -154,7 +154,8 @@ function NewProjet() {
     let taskshowCoordo = document.getElementById('taskshowCoordo');
     let addNewProject = document.getElementById('addNewProject');
 
-    if (NewProjetCo) {
+    if (addNewProject) {
+        console.log('found NewProjetCo')
         NewProjetCo.classList.add("sidebarSelect");
         apercuCo.classList.remove("sidebarSelect");
         TachesCo.classList.remove("sidebarSelect");
@@ -166,14 +167,17 @@ function NewProjet() {
         taskshowCoordo.classList.remove('flex');
         taskshowCoordo.classList.add('hidden');
 
+        console.log('before');
         addNewProject.classList.remove('hidden')
         addNewProject.classList.add('flex');
-
+        console.log('after');
         equipeShow.classList.add('hidden');
         equipeShow.classList.remove('flex');
 
         headerCoordo.classList.add('hidden');
         headerCoordo.classList.remove('flex');
+    } else {
+        console.log('NewProjetCo NOT found');
     }
 }
 
