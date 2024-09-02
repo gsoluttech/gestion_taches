@@ -37,14 +37,14 @@ function AddTache($nomTache, $date_Debut, $Date_Fin, $Description) {
     $stmt->bindParam(":desciption_tache", $Description);
     $stmt->bindParam(":FK_activite",$last);
     if ($stmt->execute()) {
-        echo "Nouvelle tâche ajoutée avec succès.";
+        return "Nouvelle tâche ajoutée avec succès.";
     } else {
-        echo "Erreur: ";
+        return "Erreur: ";
     } 
 }
 function ModifyTache($idTaches, $nomTache, $Date_Debut, $Date_Fin, $Priorite, $Description, $idProjet) {
     $conn = Database\db_connection();
-    $sql = "UPDATE TTaches SET NomTache = ?, Description = ?, Priorite = ?, DateDecheance = ?, Statut = ?, IdProjet = ?
+    $sql = "UPDATE ttaches SET NomTache = ?, Description = ?, Priorite = ?, DateDecheance = ?, Statut = ?, IdProjet = ?
             WHERE IdTaches = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":NomTache", $nomTache);
@@ -54,14 +54,14 @@ function ModifyTache($idTaches, $nomTache, $Date_Debut, $Date_Fin, $Priorite, $D
     $stmt->bindParam(":Description", $Description);
     $stmt->bindParam(":idProjet",$idProjet);
     if ($stmt->execute()) {
-        echo "Tâche mise à jour avec succès.";
+        return "Tâche mise à jour avec succès.";
     } else {
-        echo "Erreur: ";
+        return "Erreur: ";
     } 
 }
 function DeleteTache($idTaches) {
     $conn = Database\db_connection();
-    $sql = "DELETE FROM TTaches WHERE IdTaches = ?";
+    $sql = "DELETE FROM ttaches WHERE IdTaches = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":NomTache", $nomTache);
     $stmt->bindParam(":Date_Debut", $date_Debut);
@@ -70,35 +70,26 @@ function DeleteTache($idTaches) {
     $stmt->bindParam(":Description", $Description);
     $stmt->bindParam(":idProjet",$idProjet);
     if ($stmt->execute()) {
-        echo "Tâche a ete supprimée avec succès.";
+        return "Tâche a ete supprimée avec succès.";
     } else {
-        echo "Erreur de suppression de la tache: ";
+        return "Erreur de suppression de la tache: ";
     }
 }
-    // return null;
-    /*function recupererTache($idTaches) {
 
-    $sql = "SELECT * FROM TTaches WHERE IdTaches = ?";
+function recupererTache() {
+    $conn = Database\db_connection();
+    $sql = $conn->prepare("SELECT * FROM ttaches");
     
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(":NomTache", $nomTache);
-    $stmt->bindParam(":Date_Debut", $date_Debut);
-    $stmt->bindParam(":Date_Fin", $Date_Fin);
-    $stmt->bindParam(":Priorite",$Priorite);
-    $stmt->bindParam(":Description", $Description);
-    $stmt->bindParam(":idProjet",$idProjet);
-    
-    if ($stmt->execute()) {
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            return $result->fetch_assoc();
-        } else {
-            echo "Aucune tâche trouvée.";
-        }
+    $sql->execute();
+
+    $total = $sql-> rowCount();
+    $resultats = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+    if ($total != 0) {
+        return $resultats;
     } else {
-        echo "Erreur: " . $stmt->error;
-    }*/
-
-/*$conn->close();*/
+        echo "Aucune tâche n'a été trouvée";
+    }
+}
 }
 ?>

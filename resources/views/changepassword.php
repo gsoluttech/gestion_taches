@@ -17,7 +17,7 @@
     <div class="bg-white shadow-lg rounded-lg flex max-w-4xl w-full backdrop-blur-lg">
         <!-- Left Side - Form -->
         <div class="w-1/2 p-8 flex justify-center h-screen flex-col">
-            <?php $matricule = $_SESSION['email']; echo 'matricule session = ' . $matricule;?>
+
             <h2 class="text-3xl font-bold mb-4">Change your password</h2>
             <form action="" method="POST" class="space-y-6">
                 <!-- <div>
@@ -34,8 +34,7 @@
                 </div>
             </form>
             <div>
-                <p> <?php echo $success?></p>
-                <p> <?php echo $error ?></p>
+
             </div>
             <div class="w-full h-16 justify-center items-center flex text-center">
                 <p class="absolute bottom-2 text-center text-xs font-medium">&copy; 2024 gsolutech. Tous droit réservés.</p>
@@ -58,6 +57,12 @@
             $pwd = $_POST['password'];
             $noms = "";
             $roleUser = "";
+
+            $matricule = $_SESSION['email'];
+
+            $noms = "";
+            $email = "";
+            $idUser = "";
 
             $pwd_hash = password_hash($pwd, PASSWORD_DEFAULT);
             $employe = new EmployeProjet($matricule, $noms, $email, $roleUser, $idUser, $pwd_hash);

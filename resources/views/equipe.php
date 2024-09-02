@@ -1,5 +1,4 @@
-<!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"> -->
+
 
 <div class="w-full h-full p-10 relative" id="equipeShow">
     <button class="border-2 border-solid border-gray-200 bg-gray-200 px-3 py-1 rounded-lg font-medium">
@@ -18,7 +17,7 @@
             <div class="p-2">
                 <ul class="flex flex-col">
                     <li>
-                        Nom du membre
+                        Nom des membres
                     </li>
                 </ul>
             </div>

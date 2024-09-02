@@ -31,22 +31,24 @@ function AddProject($nomProjet, $date_Debut, $Date_Fin, $Description) {
         echo "Erreur: ";
     } 
 }
-function ModifyProject($idProjet, $nomProjet, $Date_Debut, $Date_Fin, $Description,) {
+function ModifyProject($idProjet, $nomProjet, $Date_Debut, $Date_Fin, $Description) {
     $conn = Database\db_connection();
-    $sql = "UPDATE TProjet SET NomProjet = ?, Date_Debut = ?, Date_Fin = ?, Description = ?, IdProjet = ?
+    $sql = "UPDATE TProjet SET NomProjet = ?, DateDebut = ?, DateFin = ?, description_Projet = ?
             WHERE IdProjet = ?"; 
- $stmt = $conn->prepare($sql);
- $stmt->bindParam(":NomProjet", $nomTache);
- $stmt->bindParam(":Date_Debut", $date_Debut);
- $stmt->bindParam(":Date_Fin", $Date_Fin);
- $stmt->bindParam(":Description", $Description);
- $stmt->bindParam(":idProjet",$idProjet);
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(1, $nomProjet);
+    $stmt->bindParam(2, $Date_Debut);
+    $stmt->bindParam(3, $Date_Fin);
+    $stmt->bindParam(4, $Description);
+    $stmt->bindParam(5, $idProjet);
+    
     if ($stmt->execute()) {
-        echo "Le Projet a ete mis à jour avec succès.";
+        echo "Le projet a été mis à jour avec succès.";
     } else {
-        echo "Erreur: " ;
+        echo "Erreur : " . $stmt->errorInfo()[2];
     } 
 }
+
 function DeleteProjetct($idProjet) {
     $conn = Database\db_connection();
     $sql = "DELETE FROM TProjet WHERE IdProjet = ?";
@@ -70,13 +72,12 @@ function recupererProjet() {
     $sql->execute();
 
     $total = $sql->rowCount();
+    $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     if ($total != 0) {
-        $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
-
         return $resultat;
     } else {
-        return 'Aucun projet créer';
+        echo 'Aucun projet trouvé';
     }
 
 }

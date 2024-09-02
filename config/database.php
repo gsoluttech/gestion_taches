@@ -2,7 +2,7 @@
 namespace config\Database;
 
 
-require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'gestion_tache_projet' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
 use Dotenv\Dotenv;
 use PDO;
