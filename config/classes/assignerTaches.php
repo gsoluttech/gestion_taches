@@ -11,7 +11,15 @@ class Assigner {
         $bdd = Database\db_connection();
 
         if ($bdd instanceof PDO) {
-            $req = $bdd->prepare('');
+            $req = $bdd->prepare('UPDATE ttaches SET FK_Employe=:FK_Employe WHERE idTaces=:idTaches');
+            $req->bindParam(':FK_Employe', $idEmploye);
+            $req->bindParam(':idTaches', $idTaches);
+
+            if ($req->execute()) {
+                return "Tâche assigné à " . $idEmploye;
+            } else {
+                return 'Erreur';
+            }
         }
     }
 }

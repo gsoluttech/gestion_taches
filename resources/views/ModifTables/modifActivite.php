@@ -1,9 +1,9 @@
-<?php 
+<or?php 
   require_once dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'activite.php';
 ?>
 
   <!-- Modification de l'activite -->
-  <div class="mb-8">
+<div class="mb-8">
     <h2 class="text-xl font-semibold mb-4">Modifier l'activité</h2>
     <form class="grid grid-cols-1 md:grid-cols-2 gap-4" method="post">
       <div>
@@ -26,9 +26,11 @@
       </div>
       <button type="submit" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700" name ="createactivite">
         Modifier
-    </button>
+      </button>
+    </form>
+</div>
 
-    <?php  
+<?php  
 use config\classes\activite\Activites;
 
 ini_set('display_errors', 1);

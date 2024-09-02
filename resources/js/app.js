@@ -88,7 +88,9 @@ function apercu() {
     let TachesCo = document.getElementById('TachesCo');
     let NewProjetCo = document.getElementById('NewProjetCo');
     let EquipesCo = document.getElementById('EquipesCo');
+    let AjouterEmplCo = document.getElementById('AjouterEmplCo');
 
+    let showAddUsers = document.getElementById('showAddUsers');
     let apercuView = document.getElementById('apercuView');
     
     let headerCoordo = document.getElementById('headerCoordo');
@@ -101,11 +103,15 @@ function apercu() {
         apercuCo.classList.add("sidebarSelect");
         TachesCo.classList.remove("sidebarSelect");
         EquipesCo.classList.remove("sidebarSelect");
+        AjouterEmplCo.classList.remove('sidebarSelect');
 
         headerCoordo.classList.remove('hidden');
         headerCoordo.classList.add('flex');
         apercuView.classList.add('flex');
         apercuView.classList.remove('hidden');
+
+        showAddUsers.classList.add('hidden');
+        showAddUsers.classList.remove('flex');
 
         taskshowCoordo.classList.remove('flex');
         taskshowCoordo.classList.add('hidden');
@@ -125,7 +131,9 @@ function Taches() {
     let TachesCo = document.getElementById('TachesCo');
     let NewProjetCo = document.getElementById('NewProjetCo');
     let EquipesCo = document.getElementById('EquipesCo');
-    
+    let AjouterEmplCo = document.getElementById('AjouterEmplCo');
+
+    let showAddUsers = document.getElementById('showAddUsers');
     let taskshowCoordo = document.getElementById('taskshowCoordo');
     let headerCoordo = document.getElementById('headerCoordo');
     let addNewProject = document.getElementById('addNewProject');
@@ -135,12 +143,16 @@ function Taches() {
         apercuCo.classList.remove('sidebarSelect');
         TachesCo.classList.add('sidebarSelect');
         EquipesCo.classList.remove('sidebarSelect');
+        AjouterEmplCo.classList.remove('sidebarSelect');
 
         headerCoordo.classList.remove('hidden');
         headerCoordo.classList.add('flex');
         apercuView.classList.add('hidden');
         apercuView.classList.remove('flex');
 
+        showAddUsers.classList.add('hidden');
+        showAddUsers.classList.remove('flex');
+        
         taskshowCoordo.classList.remove('hidden');
         taskshowCoordo.classList.add('flex');
 
@@ -157,7 +169,9 @@ function NewProjet() {
     let TachesCo = document.getElementById('TachesCo');
     let NewProjetCo = document.getElementById('NewProjetCo');
     let EquipesCo = document.getElementById('EquipesCo');
-    
+    let AjouterEmplCo = document.getElementById('AjouterEmplCo');
+
+    let showAddUsers = document.getElementById('showAddUsers');
     let headerCoordo = document.getElementById('headerCoordo');
     let taskshowCoordo = document.getElementById('taskshowCoordo');
     let addNewProject = document.getElementById('addNewProject');
@@ -168,9 +182,13 @@ function NewProjet() {
         apercuCo.classList.remove("sidebarSelect");
         TachesCo.classList.remove("sidebarSelect");
         EquipesCo.classList.remove("sidebarSelect");
+        AjouterEmplCo.classList.remove('sidebarSelect');
 
         apercuView.classList.add('hidden');
         apercuView.classList.remove('flex');
+
+        showAddUsers.classList.add('hidden');
+        showAddUsers.classList.remove('flex');
 
         taskshowCoordo.classList.remove('flex');
         taskshowCoordo.classList.add('hidden');
@@ -194,7 +212,9 @@ function Equipes() {
     let TachesCo = document.getElementById('TachesCo');
     let NewProjetCo = document.getElementById('NewProjetCo');
     let EquipesCo = document.getElementById('EquipesCo');
-    
+    let AjouterEmplCo = document.getElementById('AjouterEmplCo');
+
+    let showAddUsers = document.getElementById('showAddUsers');
     let headerCoordo = document.getElementById('headerCoordo');
     let taskshowCoordo = document.getElementById('taskshowCoordo');
     let addNewProject = document.getElementById('addNewProject');
@@ -205,7 +225,11 @@ function Equipes() {
         apercuCo.classList.remove('sidebarSelect');
         TachesCo.classList.remove('sidebarSelect');
         EquipesCo.classList.add('sidebarSelect');
+        AjouterEmplCo.classList.remove('sidebarSelect');
 
+        showAddUsers.classList.add('hidden');
+        showAddUsers.classList.remove('flex');
+        
         apercuView.classList.add('hidden');
         apercuView.classList.remove('flex');
 
@@ -223,6 +247,45 @@ function Equipes() {
     }
 }
 
+function AjouterEmplCo() {
+    let apercuCo = document.getElementById('apercuCo');
+    let TachesCo = document.getElementById('TachesCo');
+    let NewProjetCo = document.getElementById('NewProjetCo');
+    let EquipesCo = document.getElementById('EquipesCo');
+    let AjouterEmplCo = document.getElementById('AjouterEmplCo');
+
+    let showAddUsers = document.getElementById('showAddUsers');
+    let headerCoordo = document.getElementById('headerCoordo');
+    let taskshowCoordo = document.getElementById('taskshowCoordo');
+    let addNewProject = document.getElementById('addNewProject');
+    let equipeShow = document.getElementById('equipeShow');
+
+    if (showAddUsers) {
+        NewProjetCo.classList.remove('sidebarSelect');
+        apercuCo.classList.remove('sidebarSelect');
+        TachesCo.classList.remove('sidebarSelect');
+        EquipesCo.classList.remove('sidebarSelect');
+        AjouterEmplCo.classList.add('sidebarSelect');
+
+        showAddUsers.classList.remove('hidden');
+        showAddUsers.classList.add('flex');
+
+        apercuView.classList.add('hidden');
+        apercuView.classList.remove('flex');
+
+        taskshowCoordo.classList.remove('flex');
+        taskshowCoordo.classList.add('hidden');
+
+        addNewProject.classList.remove('flex')
+        addNewProject.classList.add('hidden');
+
+        headerCoordo.classList.add('flex');
+        headerCoordo.classList.remove('hidden');
+
+        equipeShow.classList.add('hidden');
+        equipeShow.classList.remove('flex');
+    }
+}
 
 function showActivity() {
     // alert("show showActivity")
@@ -301,13 +364,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
-// div.addEventListener('click', function() {
-//     alert('Click showActivity')
-//     console.log('Click showActivity');
-// })
-
-// modifier supprimer projet, tache, activite
-
 function showModidifyProject() {
     alert('showModidifyProject');
     let showModifyProject = document.getElementById('showModifyProject');
@@ -326,3 +382,41 @@ function confirmDeletion() {
     return confirm("Êtes-vous sûr de vouloir supprimer cet élément ?");
 }
 
+function confirmAssigner() {
+    return confirm("Voulez-vous assigner la tâche à cet utilisateur ?");
+}
+
+function assignerTache(param) {
+    // let idTaches = param;
+    let showAllEmpoyee = document.getElementById('showAllEmpoyee');
+    let idTacheAssignation = document.getElementById('idTacheAssignation');
+    if (showAllEmpoyee) {
+        showAllEmpoyee.classList.remove('hidden');
+        showAllEmpoyee.classList.add('flex');
+
+        idTacheAssignation.value = param;
+    }
+}
+
+var sendUserAssignation = document.querySelectorAll('#sendFormulaireID').forEach(button => {
+    button.addEventListener('click', () => {
+        const main_container_user = button.closest('#sendFormulaireID');
+
+        const idformEmploye = main_container_user.querySelector('#idformEmploye');
+        const submitForm = idformEmploye.querySelector('#submitForm');
+
+        if (submitForm) {
+            submitForm.click();
+        } else {
+            console.log('not found')
+        }
+    })
+})
+
+function closeAssinTask() {
+    let showAllEmpoyee = document.getElementById('showAllEmpoyee');
+    if (showAllEmpoyee) {
+        showAllEmpoyee.classList.add('hidden');
+        showAllEmpoyee.classList.remove('flex');
+    }
+}

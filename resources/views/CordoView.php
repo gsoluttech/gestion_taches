@@ -7,10 +7,13 @@ use config\classes\tache\Taches;
                     require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'activite.php';
                     require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'Tache.php';
                     require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'alluser.php';
+                    require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'assignerTaches.php';
+
 
                     use config\classes\projet\Project;
                     use config\classes\activite\Activites;
                     use config\classes\user\User;
+                    use config\classes\Assigner\Assigner;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,8 +23,7 @@ use config\classes\tache\Taches;
     <link rel="stylesheet" href="../css/app.css">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="../js/app.js"></script>
-    <script src="../js/text.js" type="text/javascript"></script>
+    <script src="../js/app.js" defer></script>
     <title>Weka Tsk</title>
 </head>
 <body>
@@ -43,13 +45,19 @@ use config\classes\tache\Taches;
         }
 
         //récupérer all employés
+        $matricule="";
         $noms="";
         $email="";
         $phone="";
+        $adresse="";
+        $sexe="";
+        $poste="";
         $motDePasse="";
-        $allusers = new User($noms, $email, $phone, $motDePasse);
+        $allusers = new User($matricule, $noms, $email, $phone, $adresse, $sexe, $poste, $motDePasse);
         $users=$allusers->recupererEmploye();
-        
+
+        //instancier la classe Asiigner
+        $assigner = new Assigner();
     ?>
     <div class="w-full h-screen relative flex flex-row">
         <div class="w-1/6 fixed">
@@ -104,7 +112,7 @@ use config\classes\tache\Taches;
                                 if ($etat == "") {
                                     $etatD = "Non assignée";
                                 } else {
-                                    $etatD = "Assigéé";
+                                    $etatD = $etat;
                                 }
 
                                 $classColor = ($etatD == 'Non assignée') ? 'text-red-500' : 'text-blue-500';
@@ -112,7 +120,7 @@ use config\classes\tache\Taches;
                                 echo " 
                                 <tr class=\"border-b w-auto\">
                                     <td class=\"py-3 px-6 font-medium w-3/12 border border-collapse relative cursor-pointer hover:bg-gray-100\">
-                                        <p class=\"w-5/6\" onclick=\"assignerTache('$idTaces);\">$nomTache</p>
+                                        <p class=\"w-5/6\" onclick=\"assignerTache('$idTaces');\">$nomTache</p>
                                         <form method=\"post\" action=\"\" onsubmit=\"return confirmDeletion();\" class=\"absolute right-10 top-0 w-1/6 flex flex-row\">
                                             <input type=\"text\" class=\"hidden\" name=\"idtache\" value=\"$idTaces\"/>
                                             <button class=\"mt-4 px-2 ml-4 mx-2 h-12 text-xl text-red-700 rounded-md hover:text-red-500\" type=\"submit\" name=\"deleteTaches\"><i class='bx bxs-trash-alt'></i></button>
@@ -143,7 +151,11 @@ use config\classes\tache\Taches;
                     require 'equipe.php';
                 ?>
             </div> 
-
+            <div class="hidden w-full justify-center items-center" id="showAddUsers">
+                <?php
+                    require 'ajoutemploye.php';
+                ?>
+            </div>
             <div class="hidden" id="modifTaches">
                 <?php
                     require_once "./ModifTables/modifTache.php";
@@ -153,6 +165,11 @@ use config\classes\tache\Taches;
                 <?php
                     require_once "./ModifTables/modifActivite.php";
                 ?>
+            </div>
+            <div class="hidden w-full h-full absolute top-0 z-10 justify-center items-center backdrop-blur-sm bg-white/30" id="showAllEmpoyee">
+                <?php
+                    require_once "./ModifTables/assignerTachesUser.php";
+                ?>                
             </div>
         </div>
     </div>        

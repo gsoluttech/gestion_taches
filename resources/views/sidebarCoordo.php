@@ -8,7 +8,7 @@
         <li id="TachesCo" onclick="Taches();" class=""><a href="#"><i class='bx bx-book'></i> Taches</a></li>
         <li id="NewProjetCo" onclick="NewProjet();" class=""><a href="#"><i class='bx bx-folder-plus'></i> Nouveau Projet</a></li>
         <li id="EquipesCo" onclick="Equipes();" class=""><a href="#"><i class='bx bxs-group'></i></i> Equipes</a></li>
-        <li id="AjouterEmplCo" onclick="AjouterEmplCo();" class=""><a href="#"><i class='bx bx-cog'></i> Ajouter Employé</a></li>
+        <li id="AjouterEmplCo" onclick="AjouterEmplCo();" class=""><a href="#"><i class='bx bxs-user-plus'></i> Ajouter Employé</a></li>
         <li id="ParametreCo" onclick="Parametre();" class=""><a href="#"><i class='bx bx-cog'></i> Paramètre</a></li>
     </ul>
 

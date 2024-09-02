@@ -12,16 +12,24 @@ use config\Database;
 
 class User 
 {
+    private $matricule;
     private $noms;
     private $email;
     private $phone;
+    private $adresse;
+    private $sexe;
+    private $poste;
     private $motDePasse;
 
-    public function __construct($noms, $email, $phone, $motDePasse) 
+    public function __construct($matricule, $noms, $email, $phone, $adresse, $sexe, $poste, $motDePasse) 
     {
+        $this->matricule = $matricule;	
         $this->noms = $noms;	
         $this->email = $email;
         $this->phone = $phone;
+        $this->adresse = $adresse;
+        $this->sexe = $sexe;
+        $this->poste = $poste;
         $this->motDePasse = $motDePasse;
     }
 
@@ -33,32 +41,33 @@ class User
      * @param mixed $password
      * @return void
      */
-    public function User_signup() 
+    public function addUser() 
     {
         $bdd = Database\db_connection();
 
         if ($bdd instanceof PDO) {
             try {
 
-                $annee = date('Y');
-                $ran = rand(0000, 9999);
-
+                $this->phone = htmlspecialchars(strip_tags($this->matricule));
                 $this->noms = htmlspecialchars(strip_tags($this->noms));
                 $this->email = htmlspecialchars(strip_tags($this->email));
                 $this->phone = htmlspecialchars(strip_tags($this->phone));
+                $this->adresse = htmlspecialchars(strip_tags($this->adresse));
+                $this->sexe = htmlspecialchars(strip_tags($this->sexe));
+                $this->poste = htmlspecialchars(strip_tags($this->poste));
                 $this->motDePasse = htmlspecialchars(strip_tags($this->motDePasse));
 
-                $noms = explode(' ', $this->noms)[0];
-                $matricule = $noms . '_' . $ran;
 
+                $req = $bdd->prepare("INSERT INTO temploye (matricule,Noms,Email,Phone,Adresse,sexe,Poste,MotDePasse) VALUES (:matricule,:Noms,:Email,:Phone,:Adresse,:sexe,:Poste,:MotDePasse)");
 
-                $req = $bdd->prepare("INSERT INTO temploye (matricule, noms, email, phone, motDePasse) VALUES (:matricule, :noms, :email, :phone, :motDePasse)");
-
-                $req->bindParam('matricule', $matricule);
-                $req->bindParam('noms', $this->noms);
-                $req->bindParam('email', $this->email);
-                $req->bindParam('phone', $this->phone);
-                $req->bindParam('motDePasse', $this->motDePasse);
+                $req->bindParam(':matricule', $this->matricule);
+                $req->bindParam(':Noms', $this->noms);
+                $req->bindParam(':Email', $this->email);
+                $req->bindParam(':Phone', $this->phone);
+                $req->bindParam(':Adresse', $this->adresse);
+                $req->bindParam(':sexe', $this->sexe);
+                $req->bindParam(':Poste', $this->poste);
+                $req->bindParam(':MotDePasse', $this->motDePasse);
 
                 if ($req->execute()) {
                     return 'Inscription réussie';
