@@ -73,14 +73,19 @@ use config\classes\tache\Taches;
                                 } else {
                                     $etatD = "Assigéé";
                                 }
+
+                                $classColor = ($etatD == 'Non assignée') ? 'text-red-500' : 'text-blue-500';
+                                
                                 echo " 
                                 <tr class=\"border-b w-auto\">
                                     <td class=\"py-3 px-6 font-medium w-3/12 border\">$nomTache</td>
                                     <td class=\"py-3 px-6 w-3/12 border\">$duree_estimee</td>
                                     <td class=\"py-3 px-6 w-3/12 border\">$priorite</td>
                                     <td class=\"py-3 px-6 w-3/12 border text-blue-500\">$status</td>
-                                    <td class=\"py-3 px-6 w-3/12 border <?php if($etatD==\"Non assignée\")
-                                    {echo 'text-red-500';} else {echo 'text-blue-500'} ?\">$etatD</td>
+                                    <td class=\"py-3 px-6 w-3/12 border . $classColor\">
+                                        $etatD
+                                    </td>
+
                                 </tr>
                                 ";
                             }
