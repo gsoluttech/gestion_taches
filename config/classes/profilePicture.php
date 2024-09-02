@@ -16,10 +16,10 @@ class Profils {
                 $sql->bindParam(':employeName', $nomEmplye);
 
                 if ($sql->execute()) {
-                        header("Location: " . $_SERVER['REQUEST_URI']);
-                        exit();
+                    header("Location: " . $_SERVER['REQUEST_URI']);
+                    exit();
                 } else {
-                    
+
                 }
     }
 

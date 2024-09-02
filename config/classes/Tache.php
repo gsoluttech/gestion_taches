@@ -63,12 +63,7 @@ function DeleteTache($idTaches) {
     $conn = Database\db_connection();
     $sql = "DELETE FROM ttaches WHERE IdTaches = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(":NomTache", $nomTache);
-    $stmt->bindParam(":Date_Debut", $date_Debut);
-    $stmt->bindParam(":Date_Fin", $Date_Fin);
-    $stmt->bindParam(":Priorite",$Priorite);
-    $stmt->bindParam(":Description", $Description);
-    $stmt->bindParam(":idProjet",$idProjet);
+
     if ($stmt->execute()) {
         return "Tâche a ete supprimée avec succès.";
     } else {

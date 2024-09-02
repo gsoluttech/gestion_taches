@@ -13,7 +13,7 @@ function db_connection() {
     $pwd = "";
     $db_name = "gestion_projet";
 
-
+// 
 
     try {
         $bdd = new PDO("mysql:host=$host_name;dbname=$db_name", $username, $pwd);
