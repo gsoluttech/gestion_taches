@@ -246,9 +246,43 @@ function showActivity() {
     }
 }
 
-// const div = document.getElementById('ProjectShowDetails');
+function sendPiCheck() {
+    const sendPicAuto = document.getElementById('showFilesDialog');
 
-// div.addEventListener('click', function() {
-//     alert('Click showActivity')
-//     console.log('Click showActivity');
-// })
+    console.log('sendPicAuto');
+    if(sendPicAuto) {
+        sendPicAuto.addEventListener('click', () => {
+            console.log('Boite de dialogue ouverte');
+        });
+        sendPicAuto.addEventListener('change', () => {
+            
+            if (sendPicAuto.files.length > 0) {
+                console.log("Image image selected");              
+                console.log('Boîte de dialogue fermée');
+                document.getElementById('send_profile_picture').click();
+            } else {
+                console.log("No image selected");             
+                console.log('Boîte de dialogue fermée');
+            }
+
+        });
+
+    } else {
+        console.log('Boîte de dialogue non trouvée');
+    }
+
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    let profil_image_default = document.getElementById("profil_image_default");
+    let profileImage = document.getElementById("profileImage");
+    let container_profils = document.getElementById("container_profils");
+
+    if (profileImage) {
+        container_profils.classList.remove('bg-gray-200');
+        profileImage.classList.remove('hidden');
+        profileImage.classList.add('flex')
+    } else {
+
+    }
+});

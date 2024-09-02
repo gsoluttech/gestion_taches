@@ -209,9 +209,7 @@ header {
 .profile-icon {
     width: 40px;
     height: 40px;
-    background-color: #cccccc;
     border-radius: 50%;
-    background-image: url('profile-image-url'); /* Ajoute l'URL de l'image de profil ici */
     background-size: cover;
     background-position: center;
 }
@@ -228,3 +226,6 @@ header {
     border-radius: 0.5rem;
 }
 
+#profilchange {
+    color: rgb(42, 44, 70);
+}
