@@ -1,4 +1,7 @@
-<?php
+
+<?php 
+session_start();
+
 use config\classes\tache\Taches;
                     require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'projet.php';
                     require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'activite.php';
@@ -6,6 +9,7 @@ use config\classes\tache\Taches;
     
                     use config\classes\projet\Project;
                     use config\classes\activite\Activites;
+                    // use config\classes\tache\Taches;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +23,24 @@ use config\classes\tache\Taches;
     <title>Weka Tsk</title>
 </head>
 <body>
+    <?php
+        require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'profilePicture.php';
+        require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'getpicture.php';
+        
+        use config\classes\profilePicture\profilPhoto\Profils;
+        
+        $profil = new Profils();
+        
+        $usernameC = $_SESSION['user_name'];
+        
+        $getImage = $profil->searchPhoto($usernameC);
+        global $profil_image;
+        
+        foreach($getImage as $getimg) {
+            $profil_image = $getimg['nom'];
+        }
+        
+    ?>
     <div class="w-full h-screen relative flex flex-row">
         <div class="w-1/6 fixed">
             <?php require_once 'sidebarCoordo.php';?>

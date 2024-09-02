@@ -90,6 +90,9 @@ function apercu() {
     let EquipesCo = document.getElementById('EquipesCo');
 
     let apercuView = document.getElementById('apercuView');
+    
+    let headerCoordo = document.getElementById('headerCoordo');
+
     let taskshowCoordo = document.getElementById('taskshowCoordo');
     let addNewProject = document.getElementById('addNewProject');
     
@@ -99,6 +102,8 @@ function apercu() {
         TachesCo.classList.remove("sidebarSelect");
         EquipesCo.classList.remove("sidebarSelect");
 
+        headerCoordo.classList.remove('hidden');
+        headerCoordo.classList.add('flex');
         apercuView.classList.add('flex');
         apercuView.classList.remove('hidden');
 
@@ -122,6 +127,7 @@ function Taches() {
     let EquipesCo = document.getElementById('EquipesCo');
     
     let taskshowCoordo = document.getElementById('taskshowCoordo');
+    let headerCoordo = document.getElementById('headerCoordo');
     let addNewProject = document.getElementById('addNewProject');
 
     if (TachesCo) {
@@ -130,8 +136,10 @@ function Taches() {
         TachesCo.classList.add('sidebarSelect');
         EquipesCo.classList.remove('sidebarSelect');
 
-        apercuView.classList.add('hidden');
-        apercuView.classList.remove('flex');
+        headerCoordo.classList.remove('hidden');
+        headerCoordo.classList.add('flex');
+        apercuView.classList.add('flex');
+        apercuView.classList.remove('hidden');
 
         taskshowCoordo.classList.remove('hidden');
         taskshowCoordo.classList.add('flex');
@@ -250,7 +258,48 @@ function showActivity() {
     }
 }
 
-// const div = document.getElementById('ProjectShowDetails');
+function sendPiCheck() {
+    const sendPicAuto = document.getElementById('showFilesDialog');
+
+    console.log('sendPicAuto');
+    if(sendPicAuto) {
+        sendPicAuto.addEventListener('click', () => {
+            console.log('Boite de dialogue ouverte');
+        });
+        sendPicAuto.addEventListener('change', () => {
+            
+            if (sendPicAuto.files.length > 0) {
+                console.log("Image image selected");              
+                console.log('Boîte de dialogue fermée');
+                document.getElementById('send_profile_picture').click();
+            } else {
+                console.log("No image selected");             
+                console.log('Boîte de dialogue fermée');
+            }
+
+        });
+
+    } else {
+        console.log('Boîte de dialogue non trouvée');
+    }
+
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    let profil_image_default = document.getElementById("profil_image_default");
+    let profileImage = document.getElementById("profileImage");
+    let container_profils = document.getElementById("container_profils");
+
+    if (profileImage && profileImage.naturalWidth > 0 && profileImage.naturalHeight > 0) {
+        container_profils.classList.remove('bg-gray-200');
+        profileImage.classList.remove('hidden');
+        profileImage.classList.add('flex')
+    } else {
+        profil_image_default.classList.remove('hidden');
+        profil_image_default.classList.add('flex');
+        container_profils.classList.add('bg-gray-200');
+    }
+});
 
 // div.addEventListener('click', function() {
 //     alert('Click showActivity')
@@ -272,5 +321,4 @@ function showModidifyProject() {
         console.log('not found');
     }
 }
-
 

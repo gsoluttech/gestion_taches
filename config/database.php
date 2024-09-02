@@ -1,10 +1,6 @@
 <?php
 namespace config\Database;
 
-
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
-
-use Dotenv\Dotenv;
 use PDO;
 use PDOException;
 
@@ -17,7 +13,7 @@ function db_connection() {
     $pwd = "";
     $db_name = "gestion_projet";
 
-
+// 
 
     try {
         $bdd = new PDO("mysql:host=$host_name;dbname=$db_name", $username, $pwd);
