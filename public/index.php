@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../resources/css/login.css">
 </head>
 <body class="bg-gray-100 h-screen flex items-center justify-center backgrnd_drop backdrop-blur-lg">
-    <div class="bg-white shadow-lg rounded-lg flex max-w-4xl w-full backdrop-blur-lg">
+    <div class="bg-white shadow-lg rounded-lg flex max-w-4xl w-full containerH backdrop-blur-lg">
         <div class="w-1/2 p-8 flex justify-center h-screen flex-col">
 
             <h2 class="text-3xl font-bold mb-4">Welcome back</h2>

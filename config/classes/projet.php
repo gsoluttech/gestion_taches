@@ -72,13 +72,12 @@ function recupererProjet() {
     $sql->execute();
 
     $total = $sql->rowCount();
+    $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     if ($total != 0) {
-        $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
-
         return $resultat;
     } else {
-        return 'Aucun projet trouvé';
+        echo 'Aucun projet trouvé';
     }
 
 }
