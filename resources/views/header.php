@@ -18,7 +18,7 @@
             <img src="../src/assets/profilsPicture/<?php echo $profil_image;?>" alt="" class="relative w-full h-full object-cover rounded-full hidden" id="profileImage">
             <form action="" method="POST" enctype="multipart/form-data" id="uploadForm">
                 <input type="file" name="profile_picture" id="showFilesDialog" class="hidden" accept="image/.jpeg, .png, .jpg, .gif">
-                <label for="showFilesDialog" class="right-4 bottom-2 absolute text-2xl hover:bg-opacity-75" onclick="sendPiCheck();">
+                <label for="showFilesDialog" class="right-4 bottom-2 bg-blue-200 rounded-full opacity-40 absolute text-2xl hover:bg-opacity-75" onclick="sendPiCheck();">
                     <i class='bx bx-edit-alt' id="profilchange"></i>
                 </label>
                 <button type="submit" name="send_profile_picture" id="send_profile_picture" class="hidden">send</button>

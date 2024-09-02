@@ -286,11 +286,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let profileImage = document.getElementById("profileImage");
     let container_profils = document.getElementById("container_profils");
 
-    if (profileImage) {
+    if (profileImage && profileImage.naturalWidth > 0 && profileImage.naturalHeight > 0) {
         container_profils.classList.remove('bg-gray-200');
         profileImage.classList.remove('hidden');
         profileImage.classList.add('flex')
     } else {
-
+        profil_image_default.classList.remove('hidden');
+        profil_image_default.classList.add('flex');
+        container_profils.classList.add('bg-gray-200');
     }
 });
