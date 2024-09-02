@@ -76,7 +76,7 @@ function DeleteTache($idTaches) {
     }
 }
 
-function recupererTache($idTaches) {
+function recupererTache() {
     $conn = Database\db_connection();
     $sql = $conn->prepare("SELECT * FROM ttaches");
     

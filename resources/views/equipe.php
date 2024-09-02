@@ -17,7 +17,7 @@
             <div class="p-2">
                 <ul class="flex flex-col">
                     <li>
-                        Nom du membre
+                        Nom des membres
                     </li>
                 </ul>
             </div>
