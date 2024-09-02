@@ -90,6 +90,9 @@ function apercu() {
     let EquipesCo = document.getElementById('EquipesCo');
 
     let apercuView = document.getElementById('apercuView');
+    
+    let headerCoordo = document.getElementById('headerCoordo');
+
     let taskshowCoordo = document.getElementById('taskshowCoordo');
     let addNewProject = document.getElementById('addNewProject');
     
@@ -99,6 +102,8 @@ function apercu() {
         TachesCo.classList.remove("sidebarSelect");
         EquipesCo.classList.remove("sidebarSelect");
 
+        headerCoordo.classList.remove('hidden');
+        headerCoordo.classList.add('flex');
         apercuView.classList.add('flex');
         apercuView.classList.remove('hidden');
 
@@ -122,6 +127,7 @@ function Taches() {
     let EquipesCo = document.getElementById('EquipesCo');
     
     let taskshowCoordo = document.getElementById('taskshowCoordo');
+    let headerCoordo = document.getElementById('headerCoordo');
     let addNewProject = document.getElementById('addNewProject');
 
     if (TachesCo) {
@@ -130,6 +136,8 @@ function Taches() {
         TachesCo.classList.add('sidebarSelect');
         EquipesCo.classList.remove('sidebarSelect');
 
+        headerCoordo.classList.remove('hidden');
+        headerCoordo.classList.add('flex');
         apercuView.classList.add('flex');
         apercuView.classList.remove('hidden');
 

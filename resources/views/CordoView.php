@@ -1,22 +1,5 @@
 <?php 
 session_start();
-
-require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'profilePicture.php';
-require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'getpicture.php';
-
-use config\classes\profilePicture\profilPhoto\Profils;
-
-$profil = new Profils();
-
-$usernameC = $_SESSION['user_name'];
-
-$getImage = $profil->searchPhoto($usernameC);
-global $profil_image;
-
-foreach($getImage as $getimg) {
-    $profil_image = $getimg['nom'];
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +13,24 @@ foreach($getImage as $getimg) {
     <title>Weka Tsk</title>
 </head>
 <body>
+    <?php
+        require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . 'profilePicture.php';
+        require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'getpicture.php';
+        
+        use config\classes\profilePicture\profilPhoto\Profils;
+        
+        $profil = new Profils();
+        
+        $usernameC = $_SESSION['user_name'];
+        
+        $getImage = $profil->searchPhoto($usernameC);
+        global $profil_image;
+        
+        foreach($getImage as $getimg) {
+            $profil_image = $getimg['nom'];
+        }
+        
+    ?>
     <div class="w-full h-screen relative flex flex-row">
         <div class="w-1/6 fixed">
             <?php require_once 'sidebarCoordo.php';?>
