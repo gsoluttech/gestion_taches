@@ -61,10 +61,10 @@ function ModifyTache($idTaches, $nomTache, $Date_Debut, $Date_Fin, $Priorite, $D
 }
 function DeleteTache($idTaches) {
     $conn = Database\db_connection();
-    $sql = "DELETE FROM ttaches WHERE IdTaches = ?";
+    $sql = "DELETE FROM ttaches WHERE idTaces = ?";
     $stmt = $conn->prepare($sql);
 
-    if ($stmt->execute()) {
+    if ($stmt->execute(array($idTaches))) {
         return "Tâche a ete supprimée avec succès.";
     } else {
         return "Erreur de suppression de la tache: ";

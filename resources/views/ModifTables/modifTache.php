@@ -1,12 +1,3 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/app.css">
-    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="../js/app.js" defer></script>
-    <title>Weka Tsk</title>
-</head>
 
 <!-- Modifier la tache" -->
 <div>
@@ -31,10 +22,9 @@
         <input type="date" class="mt-1 p-2 block w-full border border-gray-300 rounded-md" name="dateFin" />
       </div>
       <button type="submit" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700" name ="createtache">
-      Modifier
-    </button>
+        Modifier
+      </button>
     </form>
-  </div>
 </div>
 
 <?php  
@@ -54,4 +44,15 @@ if (isset($_POST["createtache"])){
     echo $newTaches->AddTache($nomTache, $dateDebut, $dateFin, $Description);
   }
 
+if (isset($_POST["deleteTaches"])) {
+  // code...
+  $idtache = $_POST["idtache"];
+
+  $tache = new Taches();
+
+  $deleteTaches = $taches->DeleteTache($idtache);
+
+  header("Location: " . $_SERVER['REQUEST_URI']);
+  exit();
+}
 ?>
