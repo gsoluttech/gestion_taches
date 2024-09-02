@@ -13,6 +13,7 @@
         <button class="category-btn"><i class='bx bx-category'></i> Catégorie</button>
         <button class="sort-btn"><i class='bx bx-sort'></i> Trié : Déjà fait</button>
         <i class='bx bx-bell notification-icon'></i>
+
         <div class="profile-icon bg-gray-200" id="container_profils">
             <p class="text-white text-3xl font-bold text-center hidden" id="profil_image_default"><?php echo "A" ?></p>
             <img src="../src/assets/profilsPicture/<?php echo $profil_image;?>" alt="" class="relative w-full h-full object-cover rounded-full hidden" id="profileImage">

@@ -19,7 +19,7 @@ class Profils {
                         header("Location: " . $_SERVER['REQUEST_URI']);
                         exit();
                 } else {
-                    return'Le changement de la photo de profil a échoué';
+                    
                 }
     }
 

@@ -162,7 +162,8 @@ function NewProjet() {
     let taskshowCoordo = document.getElementById('taskshowCoordo');
     let addNewProject = document.getElementById('addNewProject');
 
-    if (NewProjetCo) {
+    if (addNewProject) {
+        console.log('found NewProjetCo')
         NewProjetCo.classList.add("sidebarSelect");
         apercuCo.classList.remove("sidebarSelect");
         TachesCo.classList.remove("sidebarSelect");
@@ -174,14 +175,17 @@ function NewProjet() {
         taskshowCoordo.classList.remove('flex');
         taskshowCoordo.classList.add('hidden');
 
+        console.log('before');
         addNewProject.classList.remove('hidden')
         addNewProject.classList.add('flex');
-
+        console.log('after');
         equipeShow.classList.add('hidden');
         equipeShow.classList.remove('flex');
 
         headerCoordo.classList.add('hidden');
         headerCoordo.classList.remove('flex');
+    } else {
+        console.log('NewProjetCo NOT found');
     }
 }
 
@@ -202,8 +206,8 @@ function Equipes() {
         TachesCo.classList.remove('sidebarSelect');
         EquipesCo.classList.add('sidebarSelect');
 
-        apercuView.classList.add('flex');
-        apercuView.classList.remove('hidden');
+        apercuView.classList.add('hidden');
+        apercuView.classList.remove('flex');
 
         taskshowCoordo.classList.remove('flex');
         taskshowCoordo.classList.add('hidden');
@@ -296,3 +300,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
         container_profils.classList.add('bg-gray-200');
     }
 });
+
+// div.addEventListener('click', function() {
+//     alert('Click showActivity')
+//     console.log('Click showActivity');
+// })
+
+// modifier supprimer projet, tache, activite
+
+function showModidifyProject() {
+    alert('showModidifyProject');
+    let showModifyProject = document.getElementById('showModifyProject');
+
+    if (showModifyProject) {
+        showModifyProject.classList.remove('hidden');
+        showModifyProject.classList.add('flex');
+
+        console.log('showModifyProject ');
+    } else {
+        console.log('not found');
+    }
+}
+
