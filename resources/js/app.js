@@ -138,8 +138,8 @@ function Taches() {
 
         headerCoordo.classList.remove('hidden');
         headerCoordo.classList.add('flex');
-        apercuView.classList.add('flex');
-        apercuView.classList.remove('hidden');
+        apercuView.classList.add('hidden');
+        apercuView.classList.remove('flex');
 
         taskshowCoordo.classList.remove('hidden');
         taskshowCoordo.classList.add('flex');
@@ -320,5 +320,9 @@ function showModidifyProject() {
     } else {
         console.log('not found');
     }
+}
+
+function confirmDeletion() {
+    return confirm("Êtes-vous sûr de vouloir supprimer cet élément ?");
 }
 

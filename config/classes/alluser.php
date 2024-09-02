@@ -1,6 +1,6 @@
 <?php
 
-namespace config\class\user;
+namespace config\classes\user;
 use Exception;
 use PDO;
 
@@ -120,6 +120,21 @@ class User
             }
         } catch (Exception $exc) {
             return 'Une erreur s\'est produite, ' . $exc;
+        }
+    }
+
+    function recupererEmploye() {
+        $bdd = Database\db_connection();
+
+        $req=$bdd->prepare("SELECT * FROM temploye");
+        $req->execute();
+        $total = $req->rowCount();
+        $resultats = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($total != 0) {
+            return $resultats;
+        } else {
+            $error = 'Aucun utilisateur';
         }
     }
 }

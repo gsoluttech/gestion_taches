@@ -54,4 +54,15 @@ if (isset($_POST["createtache"])){
     echo $newTaches->AddTache($nomTache, $dateDebut, $dateFin, $Description);
   }
 
+if (isset($_POST["deleteTaches"])) {
+  // code...
+  $idtache = $_POST["idtache"];
+
+  $tache = new Taches();
+
+  $deleteTaches = $taches->DeleteTache($idtache);
+
+  header("Location: " . $_SERVER['REQUEST_URI']);
+  exit();
+}
 ?>
