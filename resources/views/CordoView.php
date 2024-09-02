@@ -37,22 +37,22 @@
                 ?>
             </div>
             
-            <div class="w-full h-42 mx-10 my-5 justify-center items-center hidden"  id="taskshowCoordo"> 
-                <table class="min-h-screen text-left border-collapse flex flex-col">
-                    <thead>
+            <div class="w-full h-42 mx-10 my-5 mr-10 justify-center items-center hidden"  id="taskshowCoordo"> 
+                <table class="w-11/12 table-auto box-border border border-collapse" aria-label="Tableau des tâches">
+                    <thead class="w-full">
                         <tr class="bg-gray-50">
-                            <th class="py-3 px-6 font-medium text-gray-800">Nom de la tâche</th>
-                            <th class="py-3 px-6 font-medium text-gray-800">Durée</th>
-                            <th class="py-3 px-6 font-medium text-gray-800">Priorité</th>
-                            <th class="py-3 px-6 font-medium text-gray-800">Statut</th>
+                            <th class="py-3 px-6 w-3/12 font-medium text-gray-800">Nom de la tâche</th>
+                            <th class="py-3 px-6 w-3/12 font-medium text-gray-800">Durée</th>
+                            <th class="py-3 px-6 w-3/12 font-medium text-gray-800">Priorité</th>
+                            <th class="py-3 px-6 w-3/12 font-medium text-gray-800">Statut</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="py-3 px-6">Nom tâche</td>
-                            <td class="py-3 px-6">Durée</td>
-                            <td class="py-3 px-6">Priorité</td>
-                            <td class="py-3 px-6 text-blue-500">En cours</td>
+                    <tbody class="w-full">
+                        <tr class="border-b w-auto">
+                            <td class="py-3 px-6 w-3/12">Nom tâche</td>
+                            <td class="py-3 px-6 w-3/12">Durée</td>
+                            <td class="py-3 px-6 w-3/12">Priorité</td>
+                            <td class="py-3 px-6 w-3/12 text-blue-500">En cours</td>
                         </tr>
                     </tbody>
                 </table>
