@@ -5,6 +5,9 @@ require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECT
 ?>
 
 <div class="w-full p-8">
+  <div class="">
+    <p><?php ?></p>
+  </div>
   <!-- creation du projet -->
   <div class="mb-8">
     <h2 class="text-xl font-semibold mb-4">Créer un projet</h2>
@@ -92,6 +95,7 @@ require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECT
   use config\classes\projet\Project;
   use config\classes\tache\Taches;
   use config\classes\activite\Activites;
+  use config\getlink\GetCurrentLink;
 
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
@@ -110,6 +114,11 @@ require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECT
 
     $newproject = new Project();
     $newproject->AddProject($nomProjet, $dateDebut, $dateFin,  $description);
+
+    $newLink = new GetCurrentLink();
+    $getLink = $newLink->getCurrentLink();
+
+    header('Location: ' . $getLink);
   }
   if (isset($_POST["createtache"])) {
     $nomTache = $_POST["nomTache"];
@@ -119,7 +128,15 @@ require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECT
 
     echo "LA tache a ete cree";
     $newTaches = new Taches();
-    echo $newTaches->AddTache($nomTache, $dateDebut, $dateFin, $Description);
+    $newTaches->AddTache($nomTache, $dateDebut, $dateFin, $Description);
+
+    $success = $newTaches;
+
+    
+    $newLink = new GetCurrentLink();
+    $getLink = $newLink->getCurrentLink();
+
+    header('Location: ' . $getLink);
   }
 
   if (isset($_POST["createactivite"])) {
@@ -133,8 +150,6 @@ require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECT
     $endDateTime = new DateTime($Date_Fin);
 
 
-
-
     // Calculer la différence entre les deux dates
     $interval = $startDateTime->diff($endDateTime);
 
@@ -142,9 +157,16 @@ require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECT
     // Afficher la durée en jours, mois, années, etc.
     $duree_estimee =  $interval->format('%y années, %m mois, %d jours');
 
-    echo $duree_estimee;
     $newActivity = new Activites();
 
     $newActivity->AddActivity($nomActivite, $date_Debut, $Date_Fin, $Description, $duree_estimee);
+
+    $success = $newActivity;
+
+    
+    $newLink = new GetCurrentLink();
+    $getLink = $newLink->getCurrentLink();
+
+    header('Location: ' . $getLink);
   }
   ?>
