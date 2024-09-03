@@ -86,5 +86,20 @@ function recupererTache() {
         echo "Aucune tâche n'a été trouvée";
     }
 }
+
+function recupererTacheForOne($idEmploye) {
+    $conn = Database\db_connection();
+    $sql = $conn->prepare("SELECT * FROM ttaches WHERE FK_Employe=?");
+    $sql->execute(array($idEmploye));
+
+    $total = $sql-> rowCount();
+    $resultats = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+    if ($total != 0) {
+        return $resultats;
+    } else {
+        return "Aucune tâche n'a été trouvée";
+    }
+}
 }
 ?>

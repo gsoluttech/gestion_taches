@@ -37,9 +37,12 @@ if (isset($_POST['assignerUser'])) {
     $idEmploye = $_POST['idEmploye'];
     $idTache = $_POST['idTache'];
 
-    $assignation = $assigner->assignation($idEmploye, $idTache);
+    echo 'Test';
+    echo $assignation = $assigner->assignation($idEmploye, $idTache);
 
-    header("Location: " . $_SERVER['REQUEST_URI']);
-    exit();
+    // header("Location: " . $_SERVER['REQUEST_URI']);
+    // exit();
+} else {
+    echo 'assignerUser not found';
 }
 ?>
