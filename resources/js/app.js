@@ -406,6 +406,7 @@ var sendUserAssignation = document.querySelectorAll('#sendFormulaireID').forEach
         const submitForm = idformEmploye.querySelector('#submitForm');
 
         if (submitForm) {
+            console.log('found');
             submitForm.click();
         } else {
             console.log('not found')

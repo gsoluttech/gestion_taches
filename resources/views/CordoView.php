@@ -104,6 +104,7 @@ use config\classes\tache\Taches;
                                 $status = $tache['Statut'];
                                 $etat = $tache['FK_Employe'];
 
+
                                 $startDateTime = new DateTime($dateDebut);
                                 $endDateTime = new DateTime($dateFin);
                                 $interval = $startDateTime->diff($endDateTime);
